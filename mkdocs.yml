@@ -1,0 +1,80 @@
+site_name: Ready-to-Review Documentation
+site_url: https://docs.ready-to-review.dev
+site_description: Documentation for Ready-to-Review - Eliminate PR coordination overhead
+site_author: codeGROOVE
+
+repo_url: https://github.com/codeGROOVE-dev/support
+repo_name: Get Support
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: cyan
+      accent: yellow
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: cyan
+      accent: yellow
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Components:
+    - Dashboard: dashboard.md
+    - Slack: slack.md
+    - Goose: goose.md
+    - GitHub Bot: github-bot.md
+  - Plans: plans.md
+  - Troubleshooting: troubleshooting.md
+  - Security: security.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/codeGROOVE-dev
+    - icon: fontawesome/solid/envelope
+      link: https://github.com/codeGROOVE-dev/support
+
+copyright: Copyright &copy; 2024 codeGROOVE
