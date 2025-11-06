@@ -2,14 +2,17 @@
 
 Documentation site built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
+## Prerequisites
+
+```bash
+make install  # Installs mkdocs-material via pip
+```
+
 ## Quick Start
 
 ```bash
-make install  # First time only
-make run
+make run      # Starts local dev server at http://localhost:8000
 ```
-
-Open http://localhost:8000
 
 ## Build & Deploy
 
@@ -18,7 +21,10 @@ make build   # Creates site/ directory
 make clean   # Remove site/ directory
 ```
 
-**Cloudflare Pages:** Auto-deploys on push. Installs from `requirements.txt`, runs `mkdocs build`, serves `site/`
+**Cloudflare Pages:**
+- Build command: `mkdocs build`
+- Deploy command: `npx wrangler deploy`
+- Builds from `requirements.txt`, deploys `site/` via `wrangler.jsonc`
 
 **GitHub Pages:** `make deploy`
 
