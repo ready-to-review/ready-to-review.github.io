@@ -2,6 +2,8 @@
 
 Native desktop notifications for macOS, Linux, Windows, BSD. Honks when you're blocking someone's PR, jet sounds when your PR advances.
 
+**Part of Ready-to-Review** - [Home](index.md) | [Getting Started](getting-started.md) | [GitHub Bot](github-bot.md) | [Dashboard](dashboard.md) | [Slack](slack.md)
+
 ## Installation
 
 Requires: GitHub CLI (`gh`), Go 1.23.4+

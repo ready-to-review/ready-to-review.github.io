@@ -2,6 +2,8 @@
 
 Web interface at `<org>.ready-to-review.dev` showing all PRs across your organization.
 
+**Part of Ready-to-Review** - [Home](index.md) | [Getting Started](getting-started.md) | [GitHub Bot](github-bot.md) | [Slack](slack.md) | [Goose](goose.md)
+
 ## Access
 
 Navigate to `<your-org>.ready-to-review.dev` (replace `<your-org>` with your GitHub org name).

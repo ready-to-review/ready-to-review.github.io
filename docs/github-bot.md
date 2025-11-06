@@ -2,6 +2,8 @@
 
 Automatically assigns reviewers based on code ownership and current workload.
 
+**Part of Ready-to-Review** - [Home](index.md) | [Getting Started](getting-started.md) | [Dashboard](dashboard.md) | [Slack](slack.md) | [Goose](goose.md)
+
 ## How It Works
 
 When you create a PR:
