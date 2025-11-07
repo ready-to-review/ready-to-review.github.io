@@ -17,46 +17,12 @@ Choose **All repositories** or select specific repos, then click **Install**.
 
 ## Step 2: Login to Your Dashboard
 
-View all your PRs in one place. Enter your GitHub organization name below, or leave blank for personal account:
-
-<div style="background: #f5f5f5; padding: 24px; border-radius: 8px; margin: 20px 0;">
-  <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-    <input
-      type="text"
-      id="org-input"
-      placeholder="your-org-name"
-      style="flex: 1; min-width: 200px; padding: 12px 16px; border: 2px solid #0e7490; border-radius: 4px; font-size: 16px; font-family: inherit;"
-      onkeypress="if(event.key === 'Enter') openDashboard()"
-    />
-    <button
-      onclick="openDashboard()"
-      class="md-button md-button--primary"
-      style="white-space: nowrap; padding: 12px 24px; font-size: 16px; cursor: pointer; border: none;"
-    >
-      Open Dashboard →
-    </button>
-  </div>
-  <p style="margin: 12px 0 0 0; font-size: 14px; color: #666;">
-    <strong>Examples:</strong> <code>acme-corp</code> → acme-corp.ready-to-review.dev | Leave blank → dash.ready-to-review.dev
-  </p>
-</div>
-
-<script>
-function openDashboard() {
-  const orgInput = document.getElementById('org-input');
-  const org = orgInput.value.trim();
-
-  if (org === '') {
-    window.open('https://dash.ready-to-review.dev', '_blank');
-  } else {
-    // Remove any special characters and convert to lowercase
-    const cleanOrg = org.toLowerCase().replace(/[^a-z0-9-]/g, '');
-    window.open(`https://${cleanOrg}.ready-to-review.dev`, '_blank');
-  }
-}
-</script>
+[Open Dashboard →](https://ready-to-review.dev){ .md-button .md-button--primary }
 
 Click **Login with GitHub** and authorize. Your PRs will appear within 60 seconds.
+
+!!! tip "Organization-Specific Workspaces"
+    The main dashboard shows your Personal workspace by default. For team-specific views, you can access organization workspaces at `<org>.ready-to-review.dev` (e.g., `acme-corp.ready-to-review.dev`), or switch workspaces using the hamburger menu in the dashboard.
 
 ## Step 3: Slack Integration (Optional)
 
