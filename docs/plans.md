@@ -10,7 +10,7 @@ All plans include all features. The only difference is repository access.
 |---------|------|-----|-------|
 | **Price** | $0 forever | $2/month | $3/seat/month |
 | **Repository Access** | Public only | Public + Private | Public + Private |
-| **Billing** | None | Individual | Centralized (org-wide) |
+| **Billing** | None | GitHub Marketplace | GitHub Marketplace (org-wide) |
 | **Desktop App** | Yes | Yes | Yes |
 | **Slack Integration** | Yes | Yes | Yes |
 | **Turn-based Tracking** | Yes | Yes | Yes |
@@ -23,7 +23,7 @@ All plans include all features. The only difference is repository access.
 
 **Pro** - Work on private repos? $2/month unlocks them. Covers your employer's repos, side projects, and client work.
 
-**Flock** - Rolling out to a team? Centralized billing, one invoice, add/remove seats anytime. Volume discounts available for 50+ seats.
+**Flock** - Rolling out to a team? Billed through GitHub Marketplace, add/remove seats anytime.
 
 ## Private Repository Access
 
@@ -41,7 +41,7 @@ To access private repositories:
 
 ## Enterprise
 
-For teams needing custom contracts (MSAs, DPAs for GDPR/CCPA, BAAs for HIPAA), dedicated support, or volume pricing:
+For teams needing custom contracts (MSAs, DPAs for GDPR/CCPA, BAAs for HIPAA) or dedicated support:
 
 [Contact Sales](mailto:flock@codegroove.dev){ .md-button }
 

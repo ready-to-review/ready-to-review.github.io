@@ -82,9 +82,9 @@ Default: If user is in the channel where PR posted, DM delayed 65 minutes. If no
 
 ## Commands
 
-`/r2r dashboard` - Open dashboard
+`/goose dashboard` - Open dashboard
 
-`/r2r help` - Show help
+`/goose help` - Show help
 
 ## Security
 
@@ -102,7 +102,7 @@ User emails hashed for matching, never stored plaintext. Details: [Security](sec
 
 **No channel messages**: Verify app installed (Slack → Apps → Manage). Check `slack.yaml` syntax in your `.codeGROOVE` repository. Invite bot: `/invite @goose`. Verify workspace URL correct.
 
-**No DMs**: Check email match (GitHub email = Slack email). Verify DM delay (default 65 min if in channel). Test: `/r2r help`.
+**No DMs**: Check email match (GitHub email = Slack email). Verify DM delay (default 65 min if in channel). Test: `/goose help`.
 
 **Too many notifications**: Increase `reminder_dm_delay: 120` or disable `daily_reminders: false`. Mute noisy repos.
 

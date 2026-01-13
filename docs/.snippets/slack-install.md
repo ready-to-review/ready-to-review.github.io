@@ -95,7 +95,7 @@ Now invite the bot to the Slack channels where you want PR notifications:
     The bot can only post to channels it's been invited to. Even with perfect configuration, you won't see messages until you invite the bot to the channel.
 
 !!! tip "Evaluating?"
-    Create a dedicated test channel like `#r2r-test` to keep evaluation separate from your team's regular channels.
+    Create a dedicated test channel like `#goose-test` to keep evaluation separate from your team's regular channels.
 
 ### Verify Slack Integration
 

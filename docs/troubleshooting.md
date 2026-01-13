@@ -208,7 +208,7 @@ See [Slack Integration - Troubleshooting](slack.md#troubleshooting) for detailed
 1. Check Slack notification settings (not muted)
 2. Verify email match (GitHub email = Slack email)
 3. Check DM delay (default 65 minutes if in channel)
-4. Verify bot can send DMs: `/r2r help`
+4. Verify bot can send DMs: `/goose help`
 
 ### Too many Slack notifications
 
