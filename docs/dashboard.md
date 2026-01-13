@@ -11,12 +11,12 @@ Web interface showing all PRs across your repositories.
 ## Access
 
 **For personal accounts / individual users:**
-Navigate to [ready-to-review.dev](https://ready-to-review.dev)
+Navigate to [reviewgoose.dev](https://reviewgoose.dev)
 
 **For GitHub organizations:**
-Navigate to `<your-org>.ready-to-review.dev` (replace `<your-org>` with your GitHub organization name)
+Navigate to `<your-org>.reviewgoose.dev` (replace `<your-org>` with your GitHub organization name)
 
-Example: If your org is `kubernetes`, visit [kubernetes.ready-to-review.dev](https://kubernetes.ready-to-review.dev)
+Example: If your org is `kubernetes`, visit [kubernetes.reviewgoose.dev](https://kubernetes.reviewgoose.dev)
 
 Click **Login with GitHub**, authorize when prompted.
 
@@ -62,7 +62,7 @@ Sort by: Updated, Created, Title, Repository
 
 ## Troubleshooting
 
-**Can't log in**: Clear cookies for `*.ready-to-review.dev`, try incognito mode. Check GitHub Settings → Applications → Authorized OAuth Apps.
+**Can't log in**: Clear cookies for `*.reviewgoose.dev`, try incognito mode. Check GitHub Settings → Applications → Authorized OAuth Apps.
 
 **No PRs shown**: Verify GitHub App installed on repos. Check [GitHub Settings → Installed GitHub Apps](https://github.com/settings/installations). Free plans don't include private repos.
 

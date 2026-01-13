@@ -1,6 +1,6 @@
-site_name: Ready-to-Review
-site_url: https://docs.ready-to-review.dev
-site_description: Documentation for Ready-to-Review - Eliminate PR coordination overhead
+site_name: reviewGOOSE
+site_url: https://docs.codegroove.dev
+site_description: Documentation for reviewGOOSE - PRs that merge in minutes, not days
 site_author: codeGROOVE
 
 theme:

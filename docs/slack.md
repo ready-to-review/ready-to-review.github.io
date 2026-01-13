@@ -54,7 +54,7 @@ Precedence: Explicit mapping > Muted channel > Auto-discovery > Wildcard
 
 1. Validate YAML syntax at [yamllint.com](https://www.yamllint.com/) before committing
 2. Commit and push changes to the `.codeGROOVE` repository
-3. Changes take effect automatically (typical: 15-30 seconds, max: 60 seconds)
+3. Changes take effect automatically (under 1 minute)
 4. Create a test PR to verify the configuration
 
 ### Notification Timing
@@ -70,7 +70,7 @@ Default: If user is in the channel where PR posted, DM delayed 65 minutes. If no
 
 ## Status Emojis
 
-- 📯 Ready-to-Review prefix
+- 🪿 reviewGOOSE prefix
 - ✅ Approved
 - 🔄 Changes requested
 - 👀 Needs review
@@ -100,7 +100,7 @@ User emails hashed for matching, never stored plaintext. Details: [Security](sec
 
 ## Troubleshooting
 
-**No channel messages**: Verify app installed (Slack → Apps → Manage). Check `slack.yaml` syntax in your `.codeGROOVE` repository. Invite bot: `/invite @Ready-to-Review`. Verify workspace URL correct.
+**No channel messages**: Verify app installed (Slack → Apps → Manage). Check `slack.yaml` syntax in your `.codeGROOVE` repository. Invite bot: `/invite @goose`. Verify workspace URL correct.
 
 **No DMs**: Check email match (GitHub email = Slack email). Verify DM delay (default 65 min if in channel). Test: `/r2r help`.
 

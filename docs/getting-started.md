@@ -1,6 +1,6 @@
 # Getting Started
 
-Welcome! Ready-to-Review eliminates PR coordination overhead through intelligent reviewer assignment and smart notifications.
+Welcome! reviewGOOSE eliminates PR coordination overhead through turn-based tracking and smart notifications.
 
 ---
 
@@ -31,7 +31,7 @@ Set up desktop notifications to stay on top of PRs.
 
 ### <span aria-label="Team">👥</span> Team Use
 
-**For teams evaluating or deploying Ready-to-Review**
+**For teams evaluating or deploying reviewGOOSE**
 
 Set up the full workflow with team notifications.
 

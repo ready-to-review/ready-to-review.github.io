@@ -1,6 +1,6 @@
-# Ready-to-Review
+# reviewGOOSE
 
-Automated PR tracking that eliminates coordination overhead. PRs merge in under an hour instead of 4.5 days.
+PRs that merge in minutes, not days. The industry average is 4.5 days. We bring it under an hour.
 
 ## Quick Setup
 
@@ -12,7 +12,6 @@ Automated PR tracking that eliminates coordination overhead. PRs merge in under 
 
 - **Dashboard**: See all your PRs in one place organized by incoming/outgoing with clear status tags
 - **Smart notifications**: Get notified via Slack or desktop when action is needed
-- **Auto-assign reviewers**: Automatically assigns the right people based on code ownership
 - **Turn-based clarity**: Always know whose turn it is - author or reviewer
 
 ## Learn More

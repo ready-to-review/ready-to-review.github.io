@@ -1,4 +1,4 @@
-# Ready-to-Review Documentation
+# reviewGOOSE Documentation
 
 Documentation site built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
@@ -45,7 +45,7 @@ docs/
     ├── dashboard.md       # Web dashboard
     ├── slack.md           # Slack integration
     ├── goose.md           # Desktop app
-    ├── github-bot.md      # Reviewer assignment
+    ├── github-bot.md      # GitHub App
     ├── plans.md           # Plan comparison
     ├── troubleshooting.md # Common issues
     └── security.md        # Security & privacy

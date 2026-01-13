@@ -1,16 +1,18 @@
 # Security & Privacy
 
-**Part of Ready-to-Review** - [Home](index.md) | [Getting Started](getting-started.md) | [Plans](plans.md) | [Troubleshooting](troubleshooting.md)
+**Part of reviewGOOSE** - [Home](index.md) | [Getting Started](getting-started.md) | [Plans](plans.md) | [Troubleshooting](troubleshooting.md)
 
 ## Data Access
 
 **GitHub permissions:**
-- Pull requests: Read & Write (assign reviewers)
-- Repository contents: Read (git blame for code ownership)
+- Pull requests: Read (track PR state)
+- Contents: Read (read `.codeGROOVE` configuration files only)
 - Repository metadata: Read (repo name)
 - Organization members: Read (find reviewers)
 
-No access to: Source code contents, commit diffs, comments, issues, secrets.
+**What we access:** PR metadata and configuration files in your `.codeGROOVE` repository. We do not read source code in your other repositories.
+
+No access to: Commit diffs, comments, issues, secrets.
 
 **Slack permissions:**
 - `channels:*`, `groups:*`: Read channels, detect notifications

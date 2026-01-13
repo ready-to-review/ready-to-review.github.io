@@ -1,84 +1,57 @@
 # Plans
 
-**Part of Ready-to-Review** - [Home](index.md) | [Getting Started](getting-started.md) | [Security](security.md) | [Troubleshooting](troubleshooting.md)
+**Part of reviewGOOSE** - [Home](index.md) | [Getting Started](getting-started.md) | [Security](security.md) | [Troubleshooting](troubleshooting.md)
 
-All plans include: Automated reviewer assignment, turn-based PR tracking, Dashboard, Slack integration, Goose desktop app, real-time notifications.
+All plans include all features. The only difference is repository access.
 
-## Plan Differences
+## Plan Comparison
 
-| Feature | Grass Roots | Super-fan | Main Stage | Funk Master |
-|---------|-------------|-----------|------------|-------------|
-| **Repository Type** | Public only | Public & Private | Public & Private | Public & Private |
-| **Infrastructure** | Multi-tenant | Multi-tenant | Isolated instance | Isolated instance |
-| **Dashboard URL** | Shared | Shared | `<org>.ready-to-review.dev` | `<org>.ready-to-review.dev` |
-| **Analytics** | Basic | Basic | Advanced | Advanced |
-| **Support** | Community (GitHub issues) | Community (GitHub issues) | Priority (<24h) | Dedicated (<4h, Slack) |
-| **Contracts** | Standard ToS | Standard ToS | Standard ToS | Custom MSA/DPA/BAA |
+| Feature | Free | Pro | Flock |
+|---------|------|-----|-------|
+| **Price** | $0 forever | $2/month | $3/seat/month |
+| **Repository Access** | Public only | Public + Private | Public + Private |
+| **Billing** | None | Individual | Centralized (org-wide) |
+| **Desktop App** | Yes | Yes | Yes |
+| **Slack Integration** | Yes | Yes | Yes |
+| **Turn-based Tracking** | Yes | Yes | Yes |
+| **Real-time Notifications** | Yes | Yes | Yes |
+| **Support** | Community | Community | Priority |
 
-## Feature Details
+## Which Plan?
 
-### Private Repository Support
+**Free** - Contributing to open source? This is for you. Works with any public repository on GitHub.
 
-**Available in**: Super-fan, Main Stage, Funk Master
+**Pro** - Work on private repos? $2/month unlocks them. Covers your employer's repos, side projects, and client work.
 
-- Track PRs in private repositories
-- Assign reviewers based on private repo Git history
-- Display private PRs in Dashboard
-- Send notifications for private PR activity
+**Flock** - Rolling out to a team? Centralized billing, one invoice, add/remove seats anytime. Volume discounts available for 50+ seats.
 
-**Access**: Source code never accessed (only Git history and PR metadata)
+## Private Repository Access
 
-**Setup**: Select private repositories during GitHub App installation
+**Requires**: Pro or Flock plan + reviewGOOSE Real-Time GitHub App installed
 
-### Isolated Instance
+To access private repositories:
 
-**Available in**: Main Stage, Funk Master
+1. Subscribe to Pro ($2/mo) or Flock ($3/seat/mo)
+2. Install the [reviewGOOSE Real-Time GitHub App](https://github.com/apps/reviewgoose-real-time) on your organization
+3. Select private repositories during installation
 
-- Dedicated URL: `<your-company>.ready-to-review.dev`
-- Org-level configuration defaults
-- Isolated data storage (not shared with other organizations)
+**What we access**: PR metadata only (titles, authors, reviewers, status). Never source code.
 
-**vs Multi-tenant**: Grass Roots/Super-fan share infrastructure and dashboard
+**Real-time vs polling**: Real-time notifications (under 1 second) only work for repos where the GitHub App is installed. Without it, the desktop app polls GitHub API (every few minutes, rate-limited).
 
-### Advanced Analytics
+## Enterprise
 
-**Available in**: Main Stage, Funk Master
+For teams needing custom contracts (MSAs, DPAs for GDPR/CCPA, BAAs for HIPAA), dedicated support, or volume pricing:
 
-**Basic analytics** (Grass Roots, Super-fan):
-- Contributor leaderboard (PRs merged)
-- Review counts per person
+[Contact Sales](mailto:flock@codegroove.dev){ .md-button }
 
-**Advanced analytics** (Main Stage, Funk Master):
-- Median PR merge time
-- Mean time to first review
-- Mean time from approval to merge
-- PRs per reviewer (active vs stale)
-- Reviewer burnout indicators
-- Bottleneck detection (slow reviewers, stuck PRs)
-- Week-over-week velocity trends
+## FAQ
 
-### Support Levels
+### Can I use Free and Pro together?
+Yes. Free covers public repos, Pro covers private. They work simultaneously.
 
-**Community** (Grass Roots, Super-fan):
-- GitHub issue tracking
-- Response: 2-5 business days
+### What if I uninstall?
+Your data is deleted within 48 hours. No lock-in.
 
-**Priority** (Main Stage):
-- Email + GitHub issues
-- Response: <24h business days, <48h weekends
-- Direct engineering team access
-
-**Dedicated** (Funk Master):
-- Shared Slack channel with engineering team
-- Response: <4h business days
-- Video calls for complex issues
-- Dedicated account manager
-
-### Custom Contracts
-
-**Available in**: Funk Master only
-
-- Master Service Agreements (MSAs)
-- Data Processing Agreements (DPAs) for GDPR/CCPA
-- Business Associate Agreements (BAAs) for HIPAA
-- Security questionnaire support
+### Is there a free trial for Pro?
+Use Free tier on public repos to evaluate. The experience is identical. Upgrade when you need private repos.

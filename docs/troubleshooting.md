@@ -1,8 +1,8 @@
 # Troubleshooting
 
-**Part of Ready-to-Review** - [Home](index.md) | [Getting Started](getting-started.md) | [Dashboard](dashboard.md) | [Slack](slack.md) | [Goose](goose.md) | [GitHub Bot](github-bot.md)
+**Part of reviewGOOSE** - [Home](index.md) | [Getting Started](getting-started.md) | [Dashboard](dashboard.md) | [Slack](slack.md) | [Goose](goose.md) | [GitHub Bot](github-bot.md)
 
-This guide provides solutions to common issues across all Ready-to-Review components. For component-specific troubleshooting, see the FAQ sections in each component's documentation.
+This guide provides solutions to common issues across all reviewGOOSE components. For component-specific troubleshooting, see the FAQ sections in each component's documentation.
 
 ## Quick Diagnosis
 
@@ -23,12 +23,12 @@ graph TD
 
 ## General Issues
 
-### I'm not sure if Ready-to-Review is working
+### I'm not sure if reviewGOOSE is working
 
 **Diagnostic procedure**:
 
 1. **Check the Dashboard**:
-    - Navigate to `<your-org>.ready-to-review.dev`
+    - Navigate to `<your-org>.reviewgoose.dev`
     - Log in with GitHub
     - Do you see any PRs listed?
 
@@ -56,7 +56,7 @@ If any component fails, proceed to that component's troubleshooting section belo
 
 1. **Verify GitHub App installation**:
     - Go to [GitHub Settings → Installed GitHub Apps](https://github.com/organizations/<your-org>/settings/installations)
-    - Find "Ready-to-Review"
+    - Find "reviewGOOSE"
     - Verify it shows "Installed" status
     - Check "Repository access" includes your repositories
 
@@ -69,20 +69,20 @@ If any component fails, proceed to that component's troubleshooting section belo
 
 ### PRs are not being tracked
 
-**Symptoms**: Pull requests exist but don't appear in Ready-to-Review.
+**Symptoms**: Pull requests exist but don't appear in reviewGOOSE.
 
 **Solutions**:
 
 1. **Verify repository is monitored**:
     - Go to [GitHub Settings → Installed GitHub Apps](https://github.com/organizations/<your-org>/settings/installations)
-    - Click "Configure" on Ready-to-Review
+    - Click "Configure" on reviewGOOSE
     - Under "Repository access":
         - If "All repositories": All repos should be monitored
         - If "Only select repositories": Verify your repo is in the list
 
 2. **Check repository visibility**:
-    - Free plans (Grass Roots) only support public repositories
-    - Verify your plan supports private repos: See [Plans & Features](plans.md)
+    - Free plan only supports public repositories
+    - Private repos require Pro or Flock: See [Plans](plans.md)
 
 3. **Verify PR is not a draft**:
     - Draft PRs are tracked but not assigned reviewers
@@ -111,7 +111,7 @@ If any component fails, proceed to that component's troubleshooting section belo
     - Verify third-party applications are allowed
 
 3. **Try installation again**:
-    - Go to [Ready-to-Review GitHub App](https://github.com/apps/ready-to-review-beta)
+    - Go to [reviewGOOSE Real-Time GitHub App](https://github.com/apps/reviewgoose-real-time)
     - Click **Configure** (if previously installed) or **Install**
     - Follow installation steps
 
@@ -121,12 +121,12 @@ If any component fails, proceed to that component's troubleshooting section belo
 
 ### GitHub App was accidentally removed
 
-**Symptoms**: Ready-to-Review stopped working after someone removed the GitHub App.
+**Symptoms**: reviewGOOSE stopped working after someone removed the GitHub App.
 
 **Solutions**:
 
 1. **Reinstall the GitHub App**:
-    - Go to [Ready-to-Review GitHub App](https://github.com/apps/ready-to-review-beta)
+    - Go to [reviewGOOSE Real-Time GitHub App](https://github.com/apps/reviewgoose-real-time)
     - Click **Install**
     - Select repositories
     - Click **Install**
@@ -158,7 +158,7 @@ See [Dashboard - Troubleshooting](dashboard.md#troubleshooting) for detailed sol
 
 **Quick fixes**:
 
-1. Clear browser cookies for `*.ready-to-review.dev`
+1. Clear browser cookies for `*.reviewgoose.dev`
 2. Try incognito mode
 3. Verify GitHub OAuth authorization
 4. Check organization membership
@@ -195,7 +195,7 @@ See [Slack Integration - Troubleshooting](slack.md#troubleshooting) for detailed
 
 1. Verify Slack app installation (Slack → Apps → Manage)
 2. Check channel configuration (in your `.codeGROOVE` repository's `slack.yaml` file)
-3. Invite bot to channel: `/invite @Ready-to-Review`
+3. Invite bot to channel: `/invite @reviewGOOSE`
 4. Verify workspace URL in configuration
 5. Create test PR and wait 60 seconds
 
@@ -267,36 +267,13 @@ See [Goose - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
 3. Check token permissions (if using `GITHUB_TOKEN`)
 4. Regenerate token
 
-## GitHub Reviewer Bot Issues
-
-### Bot didn't assign reviewers
-
-See [GitHub Reviewer Bot - Troubleshooting](github-bot.md#troubleshooting) for detailed solutions.
-
-**Quick fixes**:
-
-1. Mark PR as ready for review (if draft)
-2. Verify GitHub App installation on repository
-3. Wait 60 seconds and check again
-4. Check for eligible reviewers (not all overloaded or bots)
-
-### Bot assigned wrong reviewer
-
-See [GitHub Reviewer Bot - Troubleshooting](github-bot.md#troubleshooting) for detailed solutions.
-
-**Quick fixes**:
-
-1. Remove incorrect reviewer manually
-2. Add correct reviewer manually
-3. Bot won't override manual changes
-
 ## Notification Issues
 
 ### Not receiving any notifications
 
 **Systematic check**:
 
-1. **Dashboard**: Can you see PRs at `<org>.ready-to-review.dev`?
+1. **Dashboard**: Can you see PRs at `<org>.reviewgoose.dev`?
     - If no: [GitHub App Issues](#github-app-issues)
     - If yes: Continue to step 2
 
@@ -332,18 +309,18 @@ See [GitHub Reviewer Bot - Troubleshooting](github-bot.md#troubleshooting) for d
 
 **Symptoms**: Notifications arrive minutes or hours late.
 
-**Expected behavior**:
+**Expected behavior** (with GitHub App installed):
 
-- **Dashboard**: Updates typically within 15-30 seconds (max: 60 seconds)
-- **Slack**: Typically 15-30 seconds from GitHub event (max: 60 seconds)
-- **Goose**: Typically 15-30 seconds from GitHub event (max: 60 seconds)
+- **Dashboard**: Under 1 second
+- **Slack**: Under 1 second
+- **Goose**: Under 1 second
 - **Slack DM delay**: 65 minutes if user is in channel (configurable)
 
 **If notifications are delayed beyond this**:
 
 1. **Check GitHub webhook delivery**:
     - Go to [Repository Settings → Webhooks](https://github.com/<org>/<repo>/settings/hooks)
-    - Find Ready-to-Review webhook
+    - Find reviewGOOSE webhook
     - Check "Recent Deliveries" for failures
 
 2. **Check service status**:
@@ -454,9 +431,9 @@ See [GitHub Reviewer Bot - Troubleshooting](github-bot.md#troubleshooting) for d
     - Close or merge PRs that have been open for >90 days
     - Reduces dashboard load
 
-3. **Upgrade plan**:
-    - Main Stage and Funk Master plans have optimized infrastructure
-    - See [Plans & Features](plans.md)
+3. **Contact support**:
+    - Flock customers get priority support
+    - See [Plans](plans.md)
 
 ## Getting Additional Help
 
@@ -486,7 +463,7 @@ When opening a support issue, please provide:
 **For all issues**:
 
 - Component(s) affected
-- Plan tier (Grass Roots, Super-fan, Main Stage, Funk Master)
+- Plan tier (Free, Pro, or Flock)
 - GitHub organization name
 - Steps to reproduce
 
@@ -522,7 +499,7 @@ When opening a support issue, please provide:
 
 ### Service Status
 
-To check if Ready-to-Review services are operational:
+To check if reviewGOOSE services are operational:
 
 1. [Check Service Status →](https://github.com/codeGROOVE-dev/support/issues/new?template=support-request.md){ .md-button }
 2. Check recent issues for outage reports
@@ -537,6 +514,6 @@ Planned maintenance windows will be announced:
 
 ## Next Steps
 
-- Review [Core Concepts](concepts.md) to better understand how Ready-to-Review works
+- Review [Core Concepts](concepts.md) to better understand how reviewGOOSE works
 - Check [Security & Privacy](security.md) for security-related questions
 - Read component-specific documentation for detailed configuration options
