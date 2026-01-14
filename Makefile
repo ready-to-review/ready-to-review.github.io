@@ -1,4 +1,4 @@
-.PHONY: run build deploy deploy-cloudflare clean install
+.PHONY: run build deploy deploy-gh deploy-cloudflare clean install
 
 PORT ?= 8000
 VENV := venv
@@ -15,7 +15,9 @@ build:
 	@test -f $(MKDOCS) || { echo "mkdocs not found. Run 'make install' first."; exit 1; }
 	$(MKDOCS) build
 
-deploy:
+deploy: deploy-gh
+
+deploy-gh:
 	@test -d $(VENV) || { echo "Virtual environment not found. Run 'make install' first."; exit 1; }
 	@test -f $(MKDOCS) || { echo "mkdocs not found. Run 'make install' first."; exit 1; }
 	$(MKDOCS) gh-deploy

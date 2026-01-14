@@ -26,12 +26,11 @@ make build   # Creates site/ directory
 make clean   # Remove site/ directory
 ```
 
-**Cloudflare Pages:**
-- Build command: `mkdocs build`
-- Deploy command: `npx wrangler deploy`
-- Builds from `requirements.txt`, deploys `site/` via `wrangler.jsonc`
+**GitHub Pages (default):**
+- Automatic deployment on push to `main` via GitHub Actions
+- Manual: `make deploy`
 
-**GitHub Pages:** `make deploy`
+**Cloudflare Pages (alternative):** `make deploy-cloudflare`
 
 ## Structure
 
@@ -67,9 +66,11 @@ docs/
 
 ## Deploy
 
-GitHub Pages:
+Pushes to `main` automatically deploy via GitHub Actions.
+
+Manual deploy:
 ```bash
-mkdocs gh-deploy
+make deploy  # GitHub Pages (default)
 ```
 
-Custom domain: Add `CNAME` to `docs/`, configure DNS, deploy.
+Custom domain: Add `CNAME` to `docs/`, configure DNS in GitHub Pages settings.
