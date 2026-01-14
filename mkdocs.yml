@@ -10,10 +10,9 @@ theme:
     primary: deep purple
     accent: purple
   features:
+    - navigation.tabs
     - navigation.instant
     - navigation.tracking
-    - navigation.sections
-    - navigation.expand
     - navigation.top
     - navigation.path
     - navigation.indexes
@@ -34,17 +33,12 @@ nav:
   - Home: index.md
   - reviewGOOSE:
     - reviewgoose/index.md
-    - Getting Started:
-      - Overview: reviewgoose/getting-started.md
-      - Personal Setup: reviewgoose/getting-started-personal.md
-      - Team Setup: reviewgoose/getting-started-team.md
-    - Components:
-      - GitHub: reviewgoose/github-bot.md
-      - Web: reviewgoose/dashboard.md
-      - Slack: reviewgoose/slack.md
-      - Desktop: reviewgoose/goose.md
+    - Getting Started: reviewgoose/getting-started.md
+    - GitHub: reviewgoose/github-bot.md
+    - Web: reviewgoose/dashboard.md
+    - Slack: reviewgoose/slack.md
+    - Desktop: reviewgoose/goose.md
     - Plans: reviewgoose/plans.md
-    - Troubleshooting: reviewgoose/troubleshooting.md
     - Security: reviewgoose/security.md
   - grooveASSIGN:
     - grooveassign/index.md

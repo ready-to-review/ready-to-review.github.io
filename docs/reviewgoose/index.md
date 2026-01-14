@@ -21,7 +21,7 @@ reviewGOOSE tracks whose turn it is and notifies the right person at the right t
 
 ## Components
 
-- **[GitHub](github-bot.md)**: Connects to your repos, sends events
+- **[GitHub](github-bot.md)**: Connects to your repos
 - **[Web](dashboard.md)**: Dashboard at `<org>.reviewgoose.dev`
 - **[Slack](slack.md)**: Channel posts and DMs
 - **[Desktop](goose.md)**: Native notifications
@@ -29,11 +29,5 @@ reviewGOOSE tracks whose turn it is and notifies the right person at the right t
 ## Pricing
 
 Free for public repos. [Plans](plans.md) for private repos.
-
-## Docs
-
-- [Getting Started](getting-started.md)
-- [Troubleshooting](troubleshooting.md)
-- [Security](security.md)
 
 Questions? [Get Support](https://codegroove.dev/support)

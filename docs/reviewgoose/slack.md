@@ -1,111 +1,60 @@
 # reviewGOOSE:Slack
 
-Posts PR updates to channels and sends DMs when action needed.
+Posts PR updates to channels and sends DMs when action is needed.
 
-## Installation
+## Install
 
---8<-- "docs/.snippets/slack-install.md"
+1. [Add to Slack](https://slack.com/oauth/v2/authorize?client_id=9426269265270.9443955134789&scope=channels:history,channels:read,chat:write,chat:write.public,commands,im:write,reactions:write,team:read,users:read,users:read.email,groups:read,groups:history)
+2. Select your workspace and click **Allow**
+3. Invite the bot to channels: `/invite @goose`
 
-## Advanced Configuration
+## Channel Mapping
 
-### Auto-Discovery
-
-Repos automatically map to same-named channels:
+By default, repos auto-map to same-named channels:
 
 - `api-server` repo → `#api-server` channel
 - `mobile-app` repo → `#mobile-app` channel
 
-No config required.
-
 ### Custom Mapping
 
-To customize channel mapping, create a repository named `.codeGROOVE` in your GitHub organization, then add a file named `slack.yaml` to it:
-
-**Steps:**
-1. Create a new repository in your organization: `.codeGROOVE` (note the leading dot)
-2. Add a file named `slack.yaml` with the following content:
+Create `.codeGROOVE/slack.yaml` in your org:
 
 ```yaml
 global:
-    slack: yourworkspace.slack.com
+    team_id: T09XXXXXXXX   # Your Slack workspace ID
 
 channels:
     engineering:
         repos:
             - api-server
             - mobile-app
-
-    frontend:
+    all-prs:
         repos:
-            - website
-
-    all-repos:
-        repos:
-            - "*"  # Wildcard
-
-    # Mute auto-discovered channel
-    internal-tools:
-        mute: true
+            - "*"  # Catch-all
 ```
 
-Precedence: Explicit mapping > Muted channel > Auto-discovery > Wildcard
+Find your Team ID: Slack → Settings → Workspace Settings → look at the URL.
 
-**After editing `slack.yaml`:**
-
-1. Validate YAML syntax at [yamllint.com](https://www.yamllint.com/) before committing
-2. Commit and push changes to the `.codeGROOVE` repository
-3. Changes take effect automatically (under 1 minute)
-4. Create a test PR to verify the configuration
-
-### Notification Timing
+## Notification Timing
 
 ```yaml
 global:
-    slack: yourworkspace.slack.com
-    reminder_dm_delay: 65  # Minutes before DM if user in channel (0 = immediate)
-    daily_reminders: true  # 8-9am local time
+    team_id: T09XXXXXXXX
+    reminder_dm_delay: 65   # Minutes before DM (0 = immediate)
+    daily_reminders: true   # 8-9am local time
 ```
 
-Default: If user is in the channel where PR posted, DM delayed 65 minutes. If not in channel, immediate DM.
-
-## Status Emojis
-
-- 🪿 reviewGOOSE prefix
-- ✅ Approved
-- 🔄 Changes requested
-- 👀 Needs review
-- 🔁 Needs re-review
-- ❌ CI failed
-- ✔️ CI passed
-- ⚠️ Merge conflict
-- 🎉 Merged
+If user is in the channel, DM is delayed 65 minutes. If not, immediate DM.
 
 ## Commands
 
-`/goose dashboard` - Open dashboard
-
-`/goose help` - Show help
-
-## Security
-
-Slack OAuth scopes:
-
-- `channels:*`, `groups:*` - Read channels, detect if user saw notification
-- `chat:write*` - Post messages
-- `im:write` - Send DMs
-- `users:read.email` - Match GitHub ↔ Slack users by email
-- `team:read` - Workspace verification
-
-User emails hashed for matching, never stored plaintext. Details: [Security](security.md)
+- `/goose dashboard` - Open the dashboard
+- `/goose help` - Show help
 
 ## Troubleshooting
 
-**No channel messages**: Verify app installed (Slack → Apps → Manage). Check `slack.yaml` syntax in your `.codeGROOVE` repository. Invite bot: `/invite @goose`. Verify workspace URL correct.
+**No messages**: Invite bot with `/invite @goose`. Check `slack.yaml` syntax.
 
-**No DMs**: Check email match (GitHub email = Slack email). Verify DM delay (default 65 min if in channel). Test: `/goose help`.
+**No DMs**: Verify GitHub email matches Slack email. Check `reminder_dm_delay` setting.
 
-**Too many notifications**: Increase `reminder_dm_delay: 120` or disable `daily_reminders: false`. Mute noisy repos.
-
-**Wrong channel**: Check `slack.yaml` in your `.codeGROOVE` repository for typos. Review precedence rules above.
-
-[Get Support →](https://github.com/codeGROOVE-dev/support/issues/new?template=support-request.md){ .md-button }
+**Wrong channel**: Check `slack.yaml` for typos. Explicit mappings override auto-discovery.

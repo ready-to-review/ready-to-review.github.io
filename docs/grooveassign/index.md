@@ -21,7 +21,21 @@ Installs in 30 seconds. Works across your entire org.
 1. PR is opened
 2. We run `git blame` on changed lines to find who wrote them
 3. Score candidates by code ownership, recent activity, and current workload
-4. Assign top reviewers (excludes bots, author, overloaded devs)
+4. Apply timing boost based on when reviewers are typically active
+5. Assign top reviewers (excludes bots, author, overloaded devs)
+
+### Timing Boost
+
+grooveASSIGN analyzes historical activity patterns to prefer reviewers who are likely available now:
+
+| Availability | Score Adjustment |
+|--------------|------------------|
+| Active this hour | +30% |
+| Active next hour | +20% |
+| Active in 2 hours | +10% |
+| Not active in 3+ hours | -25% |
+
+This reduces review latency by assigning reviewers in their working hours, not while they're asleep.
 
 ## Pricing
 

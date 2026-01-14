@@ -1,32 +1,14 @@
 # API Reference
 
-gitIDENTITY provides a JSON API for integration.
+gitIDENTITY JSON API for detecting GitHub user locations.
 
-## Hosted Instance
-
-```
-https://finder.github.codegroove.app
-```
-
-## Self-Hosted
-
-Start the server:
-
-```bash
-locator-server --port 8080
-```
-
-## Endpoints
-
-### Detect User
-
-Detect a GitHub user's timezone.
+## Endpoint
 
 ```
-POST /api/v1/detect
+POST https://finder.github.codegroove.app/api/v1/detect
 ```
 
-**Request:**
+## Request
 
 ```json
 {
@@ -34,118 +16,45 @@ POST /api/v1/detect
 }
 ```
 
-**Response:**
+## Response
 
 ```json
 {
   "username": "torvalds",
   "timezone": "America/Los_Angeles",
-  "utc_offset": -8,
   "confidence": 0.87,
   "country_code": "US",
-  "location": "Portland, OR",
-  "detection_methods": [
-    "activity_pattern",
-    "geocoded_location",
-    "evening_activity"
-  ],
-  "cached": false,
-  "cached_at": null
+  "location_name": "Portland, OR"
 }
 ```
 
-**Response Fields:**
+## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
 | `username` | string | GitHub username |
-| `timezone` | string | IANA timezone (e.g., `America/Los_Angeles`) |
-| `utc_offset` | number | UTC offset in hours |
-| `confidence` | number | Confidence score (0.0 - 1.0) |
+| `timezone` | string | IANA timezone |
+| `confidence` | number | 0.0 - 1.0 |
 | `country_code` | string | ISO country code |
-| `location` | string | Human-readable location |
-| `detection_methods` | array | Methods that contributed to detection |
-| `cached` | boolean | Whether result came from cache |
-| `cached_at` | string | Cache timestamp (ISO 8601) |
+| `location_name` | string | Human-readable location |
 
-### Health Check
+## Errors
 
-```
-GET /health
-```
-
-**Response:**
-
+**404 - User Not Found**
 ```json
-{
-  "status": "ok"
-}
+{"error": "user_not_found", "message": "GitHub user not found"}
 ```
 
-## Error Responses
-
-**User Not Found (404):**
-
+**429 - Rate Limited**
 ```json
-{
-  "error": "user_not_found",
-  "message": "GitHub user 'invalid' not found"
-}
+{"error": "rate_limited", "retry_after": 3600}
 ```
 
-**Rate Limited (429):**
-
+**500 - Detection Failed**
 ```json
-{
-  "error": "rate_limited",
-  "message": "GitHub API rate limit exceeded",
-  "retry_after": 3600
-}
+{"error": "detection_failed", "message": "Could not determine timezone"}
 ```
 
-**Detection Failed (500):**
+## Enterprise
 
-```json
-{
-  "error": "detection_failed",
-  "message": "Could not determine timezone with sufficient confidence"
-}
-```
-
-## Go Library
-
-Use gitIDENTITY programmatically:
-
-```go
-import "github.com/codeGROOVE-dev/locator/pkg/locator"
-
-detector := locator.New(
-    ctx,
-    locator.WithGitHubToken(token),
-    locator.WithGeminiAPIKey(key),
-    locator.WithGoogleMapsKey(mapsKey),
-)
-
-result, err := detector.Detect(ctx, "octocat")
-if err != nil {
-    log.Fatal(err)
-}
-
-fmt.Printf("%s lives in %s (%.0f%% confidence)\n",
-    result.Username,
-    result.Timezone,
-    result.Confidence*100,
-)
-```
-
-### Options
-
-```go
-locator.New(ctx,
-    locator.WithGitHubToken(token),        // GitHub API access
-    locator.WithGeminiAPIKey(key),         // AI analysis
-    locator.WithGoogleMapsKey(mapsKey),    // Geocoding
-    locator.WithCacheDir("/tmp/cache"),    // Custom cache
-    locator.WithActivityOnly(true),        // Skip AI
-)
-```
+For bulk screening, watchlist integration, or on-premise deployment, contact [recon@codegroove.dev](mailto:recon@codegroove.dev).

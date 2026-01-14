@@ -1,73 +1,32 @@
 # reviewGOOSE:Web
 
-Web interface showing all PRs across your repositories.
-
-## Installation
-
-### Install GitHub App
-
---8<-- "docs/.snippets/github-app-install.md"
+Web dashboard showing all your PRs.
 
 ## Access
 
-**For personal accounts / individual users:**
-Navigate to [reviewgoose.dev](https://reviewgoose.dev)
+**Personal**: [reviewgoose.dev](https://reviewgoose.dev)
 
-**For GitHub organizations:**
-Navigate to `<your-org>.reviewgoose.dev` (replace `<your-org>` with your GitHub organization name)
+**Organizations**: `<org>.reviewgoose.dev` (e.g., `kubernetes.reviewgoose.dev`)
 
-Example: If your org is `kubernetes`, visit [kubernetes.reviewgoose.dev](https://kubernetes.reviewgoose.dev)
+Log in with GitHub. Sessions expire after 24 hours.
 
-Click **Login with GitHub**, authorize when prompted.
+## Views
 
-Sessions expire after 24 hours.
+- **Incoming**: PRs where you're assigned as reviewer
+- **Outgoing**: PRs you created
+- **Drafts**: Your draft PRs
 
-## Security & Privacy
+## Status Tags
 
-OAuth scopes requested:
-
-- `user:read` - Your username and profile
-- `repo:status` - PR status and CI checks
-- `read:org` - Organization membership
-
-Data cached up to 28 days. No code access. Details: [Security](security.md)
-
-## Interface
-
-**Incoming**: PRs where you're assigned reviewer
-
-**Outgoing**: PRs you created waiting for review or changes
-
-**Drafts**: Your draft PRs not ready for review
-
-### Status Tags
-
-Each PR shows tags indicating what's blocking it:
-
-- **Needs changes**: Fix CI failures, address review feedback, or resolve merge conflicts
-- **Awaiting review**: Waiting for reviewers to approve
-- **Ready to merge**: All approvals received, ready to ship
-- **Draft**: Not ready for review yet
-- **CI running**: Automated checks in progress
-
-**Priority**: Focus on PRs where you're blocking progress (incoming PRs needing your review, or outgoing PRs needing your fixes).
-
-### Search & Filter
-
-Search box: Filter by PR title, repo name, author, or reviewer
-
-Repository dropdown: Show PRs from specific repos only
-
-Sort by: Updated, Created, Title, Repository
+- **Needs changes**: Fix CI, address feedback, or resolve conflicts
+- **Awaiting review**: Waiting for reviewer approval
+- **Ready to merge**: Approved and ready to ship
+- **CI running**: Checks in progress
 
 ## Troubleshooting
 
-**Can't log in**: Clear cookies for `*.reviewgoose.dev`, try incognito mode. Check GitHub Settings → Applications → Authorized OAuth Apps.
+**Can't log in**: Clear cookies for `*.reviewgoose.dev`, try incognito.
 
-**No PRs shown**: Verify GitHub App installed on repos. Check [GitHub Settings → Installed GitHub Apps](https://github.com/settings/installations). Free plans don't include private repos.
+**No PRs**: Verify the [GitHub App](github-bot.md) is installed on your repos.
 
-**Wrong status**: Hard refresh (Ctrl+Shift+R or Cmd+Shift+R). Status cached up to 5 minutes.
-
-**Slow**: Use repository filtering. Clear browser cache.
-
-[Get Support →](https://github.com/codeGROOVE-dev/support/issues/new?template=support-request.md){ .md-button }
+**Stale data**: Hard refresh (Ctrl+Shift+R).

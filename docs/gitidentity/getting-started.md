@@ -26,7 +26,8 @@ Response:
   "username": "torvalds",
   "timezone": "America/Los_Angeles",
   "confidence": 0.87,
-  "location": "Portland, OR"
+  "country_code": "US",
+  "location_name": "Portland, OR"
 }
 ```
 

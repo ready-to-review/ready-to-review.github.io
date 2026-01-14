@@ -1,67 +1,27 @@
 # Getting Started
 
-Welcome! reviewGOOSE eliminates PR coordination overhead through turn-based tracking and smart notifications.
+Set up reviewGOOSE for your team or personal use.
 
----
+## Personal Use (~1 min)
 
-## Choose Your Path
+For solo developers and open source contributors.
 
-<div class="choice-cards" markdown>
+1. [Install the GitHub App](github-bot.md)
+2. [Install the Desktop app](goose.md)
 
-<div class="choice-card" markdown="1">
+You'll get desktop notifications when PRs need your attention.
 
-### <span aria-label="Personal">👤</span> Personal Use
+## Team Use (~15 min)
 
-**For solo developers and open source contributors**
+For teams deploying reviewGOOSE across an organization.
 
-Set up desktop notifications to stay on top of PRs.
+1. [Install the GitHub App](github-bot.md)
+2. [View the Dashboard](dashboard.md)
+3. [Set up Slack](slack.md)
+4. Optionally [install Desktop](goose.md) for individual notifications
 
-**What you'll configure:**
+## Evaluation Tips
 
-- GitHub App for PR tracking
-- Desktop notifications (Desktop)
-
-**Time:** ~1 minute
-
-<a href="../getting-started-personal/" class="choice-card-cta">Start Personal Setup →</a>
-
-</div>
-
-<div class="choice-card" markdown="1">
-
-### <span aria-label="Team">👥</span> Team Use
-
-**For teams evaluating or deploying reviewGOOSE**
-
-Set up the full workflow with team notifications.
-
-**What you'll configure:**
-
-- GitHub App for PR tracking
-- Web dashboard
-- Slack integration
-- Desktop notifications (optional)
-
-**Time:** ~15 minutes
-
-<a href="../getting-started-team/" class="choice-card-cta">Start Team Setup →</a>
-
-</div>
-
-</div>
-
-## Security & Privacy
-
-Both setups are designed with security in mind:
-
-- **GitHub App:** Only accesses repositories you explicitly grant it access to
-- **Slack App:** Only sees channels you explicitly invite it to
-- **Desktop App:** Runs entirely on your machine using your credentials
-
-Start with 1-2 public repositories to evaluate risk-free before expanding to your full organization.
-
-## Need Help?
-
-- **Documentation:** Browse the full docs using the navigation above
-- **Support:** [github.com/codeGROOVE-dev/support](https://github.com/codeGROOVE-dev/support)
-- **Security Questions:** [Security Documentation](security.md)
+- Start with 1-2 public repositories
+- Public repos are free, no payment required
+- Expand to private repos after validating the workflow

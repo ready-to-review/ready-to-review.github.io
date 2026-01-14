@@ -1,89 +1,46 @@
-# Security & Privacy
+# Security
 
-**Part of reviewGOOSE** - [Home](index.md) | [Getting Started](getting-started.md) | [Plans](plans.md) | [Troubleshooting](troubleshooting.md)
+## What We Access
 
-## Data Access
+**GitHub:**
+- PR metadata (titles, authors, reviewers, status)
+- `.codeGROOVE/` config files
+- Organization membership
 
-**GitHub permissions:**
-- Pull requests: Read (track PR state)
-- Contents: Read (read `.codeGROOVE` configuration files only)
-- Repository metadata: Read (repo name)
-- Organization members: Read (find reviewers)
+**We do not access:** Source code, commits, comments, issues, secrets.
 
-**What we access:** PR metadata and configuration files in your `.codeGROOVE` repository. We do not read source code in your other repositories.
+**Slack:**
+- Channel membership (to detect if you saw notifications)
+- Email addresses (to match GitHub ↔ Slack accounts)
 
-No access to: Commit diffs, comments, issues, secrets.
-
-**Slack permissions:**
-- `channels:*`, `groups:*`: Read channels, detect notifications
-- `chat:write*`: Post messages
-- `im:write`: Send DMs
-- `users:read.email`: Match GitHub ↔ Slack by email
-- `team:read`: Workspace verification
-
-No access to: Private DMs between users, files, billing, passwords.
-
-**Desktop:** Uses GitHub CLI credentials (OS keychain) or `GITHUB_TOKEN` env var. Accesses PR metadata only.
+**Desktop app:** Uses your GitHub CLI credentials locally. No data sent to us.
 
 ## Data Storage
 
-| Data | Duration | Purpose |
-|------|----------|---------|
-| PR metadata | 28 days | Dashboard, notifications |
-| Git blame | 24 hours | Code ownership |
-| User mappings | 28 days | GitHub ↔ Slack matching |
-| Reviewer workload | 6 hours | Prevent overload |
-| Webhook events | 72 hours | Deduplication |
+| Data | Retention |
+|------|-----------|
+| PR metadata | 28 days |
+| User mappings | 28 days |
+| Webhook events | 72 hours |
 
-**Not stored:** Source code, tokens (not persisted), commit diffs, comments.
+**Not stored:** Source code, tokens, commit diffs.
 
 **Encryption:** AES-256 at rest, TLS 1.2+ in transit.
 
-**Deletion:** Uninstall GitHub App → data deleted within 48 hours. Request immediate deletion:
-
-[Request Deletion →](https://github.com/codeGROOVE-dev/support/issues/new?template=support-request.md){ .md-button }
-
 ## Privacy
 
-**No third-party sharing** except:
-- GitHub API (you authorize)
-- Slack API (you authorize)
-- Google Cloud Platform (infrastructure, DPA in place)
+- No third-party sharing (except GitHub/Slack APIs you authorize)
+- No telemetry or tracking
+- Emails hashed, not stored plaintext
 
-**No telemetry, tracking, or analytics.**
+## Deletion
 
-**Emails:** Slack integration hashes emails for GitHub ↔ Slack matching. Not stored plaintext.
-
-**Cookies:** Session (24hr), CSRF token. No tracking cookies.
+Uninstall the GitHub App → data deleted within 48 hours.
 
 ## Infrastructure
 
-**Hosting:** Google Cloud Platform (Cloud Run, Datastore)
+Google Cloud Platform (Cloud Run, Datastore). Private VPC, no public backend IPs.
 
-**Network:** Private VPC, no public IPs for backend, Cloud Armor DDoS protection
+## Security Issues
 
-**Access:** 2FA required, least-privilege IAM, audit logs
-
-**Backups:** Encrypted, 30-day retention
-
-## Incident Response
-
-**Security vulnerability:** Open private advisory at https://github.com/codeGROOVE-dev/support/security
-
-**Our response:**
-- Acknowledgment: 24 hours
-- Assessment: 48 hours
-- Fix: Critical (24hr), High (3d), Medium (7d), Low (next release)
-- Notification: Critical incidents reported within 24 hours
-
-**Breach notification:** Affected users notified within 24 hours.
-
-## Contact
-
-**Questions:**
-
-[Get Support →](https://github.com/codeGROOVE-dev/support/issues/new?template=support-request.md){ .md-button }
-
-**Security issues:** https://github.com/codeGROOVE-dev/support/security (private advisory)
-
-Last updated: November 2024
+Report vulnerabilities: [github.com/codeGROOVE-dev/support/security](https://github.com/codeGROOVE-dev/support/security)

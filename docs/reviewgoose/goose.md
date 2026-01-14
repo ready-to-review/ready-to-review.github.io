@@ -1,59 +1,57 @@
 # reviewGOOSE:Desktop
 
-Native desktop notifications for macOS, Linux, Windows, BSD. Honks when you're blocking someone's PR, jet sounds when your PR advances.
+Native desktop notifications for macOS, Linux, Windows, and BSD.
 
-## Installation
+Honks when you're blocking a PR. Jet sounds when your PR advances.
 
---8<-- "docs/.snippets/desktop-integration-goose.md"
+## Install
 
-## Configuration
+=== "macOS"
 
-### Fine-Grained Token
+    ```bash
+    brew install --cask codegroove-dev/tap/reviewgoose
+    ```
 
-For repo-specific access instead of full GitHub account access:
+    Launch from `/Applications/reviewGOOSE.app`
 
-Create token: https://github.com/settings/personal-access-tokens/new
+=== "Linux (Homebrew)"
 
-Permissions: Pull requests (read), Metadata (read)
+    ```bash
+    brew install codegroove-dev/tap/reviewgoose
+    ```
 
-```bash
-env GITHUB_TOKEN=your_token_here goose
-```
+=== "Linux (Manual)"
 
-Token not persisted to disk. Set environment variable each run.
+    ```bash
+    # Install Go and GitHub CLI first
+    go install github.com/codeGROOVE-dev/goose/cmd/reviewgoose@latest
+    ```
 
-### Organization Filtering
+=== "Windows"
 
-Click Desktop icon → **Organization Filter** → Check/uncheck orgs
+    ```powershell
+    # Install Go and GitHub CLI first
+    go install github.com/codeGROOVE-dev/goose/cmd/reviewgoose@latest
+    ```
 
-Useful to separate work and personal projects.
+## Setup
 
-### Settings
+1. Install the [GitHub App](github-bot.md) first
+2. Authenticate with GitHub CLI: `gh auth login`
+3. Launch the app
 
-Click Desktop icon → **Settings**:
+## Settings
 
-- Enable/disable audio notifications
-- Auto-open PRs in browser (rate-limited: 1/min, 10/hr)
-- Organization filter
+Click the menu bar icon:
 
-## Security
-
-Uses GitHub CLI credentials (stored by `gh` in OS keychain) or `GITHUB_TOKEN` env var.
-
-Accesses: PR metadata (title, author, reviewers, status)
-
-Does not access: Source code, commits, comments
-
-No telemetry. No data transmission except GitHub API. Details: [Security](security.md)
+- **Organization Filter**: Show/hide specific orgs
+- **Audio**: Enable/disable notification sounds
+- **Auto-open**: Open PRs in browser automatically
 
 ## Troubleshooting
 
-**No icon**: macOS: Check `ps aux | grep goose`, restart with `killall goose && make run`. Linux: Verify system tray support, install `libgtk-3-dev libappindicator3-dev`. Windows: Check hidden tray icons.
+**No icon**: Check if the app is running. Restart the app.
 
-**No notifications**: Check OS notification permissions. Verify PRs exist (click icon). Create test PR.
+**No notifications**: Check OS notification permissions. Verify PRs exist by clicking the icon.
 
-**Auth failed**: Run `gh auth status`, re-auth with `gh auth login`. Check token permissions if using `GITHUB_TOKEN`.
-
-**Crashes**: Run in foreground to see errors: `./goose`. Update: `git pull && make clean && make run`.
-
-[Get Support →](https://github.com/codeGROOVE-dev/support/issues/new?template=support-request.md){ .md-button }
+**Auth failed**: Run `gh auth status` to check credentials. Re-authenticate with `gh auth login`.
