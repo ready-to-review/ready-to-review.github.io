@@ -19,7 +19,7 @@ Set up desktop notifications to stay on top of PRs.
 **What you'll configure:**
 
 - GitHub App for PR tracking
-- Desktop notifications (Goose)
+- Desktop notifications (Desktop)
 
 **Time:** ~1 minute
 

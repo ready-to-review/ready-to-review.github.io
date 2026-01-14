@@ -1,4 +1,4 @@
-# Dashboard
+# reviewGOOSE:Web
 
 Web interface showing all PRs across your repositories.
 

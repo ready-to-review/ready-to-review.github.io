@@ -1,4 +1,4 @@
-# Slack Integration
+# reviewGOOSE:Slack
 
 Posts PR updates to channels and sends DMs when action needed.
 

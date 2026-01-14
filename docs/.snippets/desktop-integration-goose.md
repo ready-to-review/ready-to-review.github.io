@@ -1,6 +1,6 @@
 **What this enables:** Native desktop notifications when PRs need your attention. Works on macOS, Windows, and Linux.
 
-**Security:** Goose runs on your machine using your GitHub credentials. It communicates with GitHub's API and reviewGOOSE's Turn API for PR state analysis.
+**Security:** reviewGOOSE:Desktop runs on your machine using your GitHub credentials. It communicates with GitHub's API and reviewGOOSE's Turn API for PR state analysis.
 
 ### Installation Methods
 

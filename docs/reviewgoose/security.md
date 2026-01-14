@@ -23,7 +23,7 @@ No access to: Commit diffs, comments, issues, secrets.
 
 No access to: Private DMs between users, files, billing, passwords.
 
-**Goose:** Uses GitHub CLI credentials (OS keychain) or `GITHUB_TOKEN` env var. Accesses PR metadata only.
+**Desktop:** Uses GitHub CLI credentials (OS keychain) or `GITHUB_TOKEN` env var. Accesses PR metadata only.
 
 ## Data Storage
 

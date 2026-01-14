@@ -27,12 +27,12 @@ All plans include all features. The only difference is repository access.
 
 ## Private Repository Access
 
-**Requires**: Pro or Flock plan + reviewGOOSE Real-Time GitHub App installed
+**Requires**: Pro or Flock plan + reviewGOOSE:GitHub App installed
 
 To access private repositories:
 
 1. Subscribe to Pro ($2/mo) or Flock ($3/seat/mo)
-2. Install the [reviewGOOSE Real-Time GitHub App](https://github.com/apps/reviewgoose-real-time) on your organization
+2. Install the [reviewGOOSE:GitHub App](https://github.com/apps/reviewgoose) on your organization
 3. Select private repositories during installation
 
 **What we access**: PR metadata only (titles, authors, reviewers, status). Never source code.

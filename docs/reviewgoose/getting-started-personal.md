@@ -5,7 +5,7 @@ This guide walks you through setting up reviewGOOSE for personal use. You'll ins
 **Time required:** ~1 minute
 
 !!! important "GitHub App Required"
-    The reviewGOOSE Real-Time GitHub App is required for:
+    The reviewGOOSE:GitHub App is required for:
 
     - **Real-time notifications** (under 1 second)
     - **Slack integration** (server needs to know which repos to track)
@@ -33,4 +33,4 @@ You're now receiving desktop notifications for PRs that need your attention.
 
 ## Next Steps
 
-Explore [Dashboard](dashboard.md), [Goose](goose.md), or [Team Setup](getting-started-team.md) documentation, or visit [support](https://github.com/codeGROOVE-dev/support) for help.
+Explore [Dashboard](dashboard.md), [Desktop](goose.md), or [Team Setup](getting-started-team.md) documentation, or visit [support](https://github.com/codeGROOVE-dev/support) for help.

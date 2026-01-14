@@ -1,14 +1,14 @@
-site_name: reviewGOOSE
-site_url: https://docs.reviewgoose.dev
-site_description: Documentation for reviewGOOSE - PRs that merge in minutes, not days
+site_name: codeGROOVE
+site_url: https://docs.codegroove.dev
+site_description: Developer tools that make collaboration effortless
 site_author: codeGROOVE
 
 theme:
   name: material
   palette:
     scheme: default
-    primary: yellow
-    accent: yellow
+    primary: deep purple
+    accent: purple
   features:
     - navigation.instant
     - navigation.tracking
@@ -32,19 +32,28 @@ theme:
 
 nav:
   - Home: index.md
-  - Getting Started:
-    - Overview: getting-started.md
-    - Personal Setup: getting-started-personal.md
-    - Team Setup: getting-started-team.md
-  - Core Concepts: concepts.md
-  - Components:
-    - GitHub App: github-bot.md
-    - Dashboard: dashboard.md
-    - Slack: slack.md
-    - Goose: goose.md
-  - Plans: plans.md
-  - Troubleshooting: troubleshooting.md
-  - Security: security.md
+  - reviewGOOSE:
+    - reviewgoose/index.md
+    - Getting Started:
+      - Overview: reviewgoose/getting-started.md
+      - Personal Setup: reviewgoose/getting-started-personal.md
+      - Team Setup: reviewgoose/getting-started-team.md
+    - Components:
+      - GitHub: reviewgoose/github-bot.md
+      - Web: reviewgoose/dashboard.md
+      - Slack: reviewgoose/slack.md
+      - Desktop: reviewgoose/goose.md
+    - Plans: reviewgoose/plans.md
+    - Troubleshooting: reviewgoose/troubleshooting.md
+    - Security: reviewgoose/security.md
+  - grooveASSIGN:
+    - grooveassign/index.md
+    - Getting Started: grooveassign/getting-started.md
+    - Configuration: grooveassign/configuration.md
+  - gitIDENTITY:
+    - gitidentity/index.md
+    - Getting Started: gitidentity/getting-started.md
+    - API: gitidentity/api.md
   - Support: https://codegroove.dev/support
 
 markdown_extensions:

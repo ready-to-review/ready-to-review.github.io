@@ -1,7 +1,7 @@
 !!! tip "Free for Public Repositories"
     Access to public repositories is **completely free**. Start with 1-2 public repos to evaluate, then expand later if needed.
 
-1. Visit: [reviewGOOSE Real-Time GitHub App](https://github.com/apps/reviewgoose-real-time)
+1. Visit: [reviewGOOSE:GitHub App](https://github.com/apps/reviewgoose)
 
 2. Click **Install**
 

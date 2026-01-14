@@ -1,6 +1,6 @@
 # Troubleshooting
 
-**Part of reviewGOOSE** - [Home](index.md) | [Getting Started](getting-started.md) | [Dashboard](dashboard.md) | [Slack](slack.md) | [Goose](goose.md) | [GitHub Bot](github-bot.md)
+**Part of reviewGOOSE** - [Home](index.md) | [Getting Started](getting-started.md) | [Dashboard](dashboard.md) | [Slack](slack.md) | [Desktop](goose.md) | [GitHub Bot](github-bot.md)
 
 This guide provides solutions to common issues across all reviewGOOSE components. For component-specific troubleshooting, see the FAQ sections in each component's documentation.
 
@@ -16,8 +16,8 @@ graph TD
     D -->|No| E[GitHub App Installation Issues]
     D -->|Yes| F{Getting Slack notifications?}
     F -->|No| G[Slack Integration Issues]
-    F -->|Yes| H{Getting Goose notifications?}
-    H -->|No| I[Goose Issues]
+    F -->|Yes| H{Getting Desktop notifications?}
+    H -->|No| I[Desktop Issues]
     H -->|Yes| J[Check Component-Specific Docs]
 ```
 
@@ -40,7 +40,7 @@ graph TD
 3. **Verify each component**:
     - **Dashboard**: Refresh and check if PR appears
     - **Slack**: Check configured channel for message
-    - **Goose**: Check for desktop notification
+    - **Desktop**: Check for desktop notification
 
 If any component fails, proceed to that component's troubleshooting section below.
 
@@ -111,7 +111,7 @@ If any component fails, proceed to that component's troubleshooting section belo
     - Verify third-party applications are allowed
 
 3. **Try installation again**:
-    - Go to [reviewGOOSE Real-Time GitHub App](https://github.com/apps/reviewgoose-real-time)
+    - Go to [reviewGOOSE:GitHub App](https://github.com/apps/reviewgoose)
     - Click **Configure** (if previously installed) or **Install**
     - Follow installation steps
 
@@ -126,7 +126,7 @@ If any component fails, proceed to that component's troubleshooting section belo
 **Solutions**:
 
 1. **Reinstall the GitHub App**:
-    - Go to [reviewGOOSE Real-Time GitHub App](https://github.com/apps/reviewgoose-real-time)
+    - Go to [reviewGOOSE:GitHub App](https://github.com/apps/reviewgoose)
     - Click **Install**
     - Select repositories
     - Click **Install**
@@ -221,11 +221,11 @@ See [Slack Integration - Troubleshooting](slack.md#troubleshooting) for detailed
 3. Mute noisy channels: `mute: true`
 4. Use repository filtering
 
-## Goose Desktop App Issues
+## Desktop App Issues
 
-### Goose icon not appearing
+### Desktop icon not appearing
 
-See [Goose - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
+See [Desktop - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
 
 **Quick fixes by platform**:
 
@@ -245,20 +245,20 @@ See [Goose - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
     2. Restart via Task Manager
     3. Run as administrator
 
-### No Goose notifications
+### No Desktop notifications
 
-See [Goose - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
+See [Desktop - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
 
 **Quick fixes**:
 
 1. Check OS notification permissions
-2. Verify PRs exist (click Goose icon)
+2. Verify PRs exist (click Desktop icon)
 3. Create test PR and wait 60 seconds
 4. Check system volume (for audio notifications)
 
-### Goose authentication failed
+### Desktop authentication failed
 
-See [Goose - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
+See [Desktop - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
 
 **Quick fixes**:
 
@@ -278,12 +278,12 @@ See [Goose - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
     - If yes: Continue to step 2
 
 2. **Slack**: Did you install the Slack integration?
-    - If no: Notifications will only appear in Dashboard and Goose
+    - If no: Notifications will only appear in Dashboard and Desktop
     - If yes: [Slack Integration Issues](#slack-integration-issues)
 
-3. **Goose**: Did you install Goose?
+3. **Desktop**: Did you install Desktop?
     - If no: Notifications will only appear in Dashboard and Slack
-    - If yes: [Goose Desktop App Issues](#goose-desktop-app-issues)
+    - If yes: [Desktop App Issues](#desktop-app-issues)
 
 ### Receiving duplicate notifications
 
@@ -291,12 +291,12 @@ See [Goose - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
 
 **Possible causes**:
 
-1. **Multiple notification channels enabled**: Slack + Goose both notify (this is expected)
+1. **Multiple notification channels enabled**: Slack + Desktop both notify (this is expected)
 2. **Misconfigured Slack channels**: PR posted to multiple channels
 
 **Solutions**:
 
-1. **If Slack + Goose**:
+1. **If Slack + Desktop**:
     - This is normal behavior - you'll get both
     - Disable one if you prefer single-channel notifications
 
@@ -313,7 +313,7 @@ See [Goose - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
 
 - **Dashboard**: Under 1 second
 - **Slack**: Under 1 second
-- **Goose**: Under 1 second
+- **Desktop**: Under 1 second
 - **Slack DM delay**: 65 minutes if user is in channel (configurable)
 
 **If notifications are delayed beyond this**:
@@ -402,20 +402,20 @@ See [Goose - Troubleshooting](goose.md#troubleshooting) for detailed solutions.
 
 ## Performance Issues
 
-### High resource usage (Goose)
+### High resource usage (Desktop)
 
-**Symptoms**: Goose uses excessive CPU or memory.
+**Symptoms**: Desktop uses excessive CPU or memory.
 
 **Solutions**:
 
 1. **Reduce polling frequency** (future feature - currently fixed at 5 minutes)
 
 2. **Filter organizations**:
-    - Click Goose icon → Organization Filter
+    - Click Desktop icon → Organization Filter
     - Disable organizations you don't need to monitor
 
 3. **Check for memory leaks**:
-    - Restart Goose daily (or use auto-start on login to restart on reboot)
+    - Restart Desktop daily (or use auto-start on login to restart on reboot)
     - [Report Issue →](https://github.com/codeGROOVE-dev/support/issues/new?template=support-request.md){ .md-button }
 
 ### Dashboard slow with many PRs
@@ -442,7 +442,7 @@ If your issue isn't covered here:
 1. **Check component-specific documentation**:
     - [Dashboard Troubleshooting](dashboard.md#troubleshooting)
     - [Slack Integration Troubleshooting](slack.md#troubleshooting)
-    - [Goose Troubleshooting](goose.md#troubleshooting)
+    - [Desktop Troubleshooting](goose.md#troubleshooting)
     - [GitHub Bot Troubleshooting](github-bot.md#troubleshooting)
 
 2. **Open a support issue**:
@@ -450,7 +450,7 @@ If your issue isn't covered here:
     [Get Support →](https://github.com/codeGROOVE-dev/support/issues/new?template=support-request.md){ .md-button }
 
     Include:
-    - Component affected (Dashboard, Slack, Goose, GitHub Bot)
+    - Component affected (Dashboard, Slack, Desktop, GitHub Bot)
         - Steps to reproduce
         - Expected behavior
         - Actual behavior
@@ -481,7 +481,7 @@ When opening a support issue, please provide:
 - Contents of `.codeGROOVE/slack.yaml` (if applicable)
 - Channel name where messages should appear
 
-**For Goose issues**:
+**For Desktop issues**:
 
 - Operating system and version
 - Installation method (Homebrew, source build)
@@ -514,6 +514,5 @@ Planned maintenance windows will be announced:
 
 ## Next Steps
 
-- Review [Core Concepts](concepts.md) to better understand how reviewGOOSE works
 - Check [Security & Privacy](security.md) for security-related questions
 - Read component-specific documentation for detailed configuration options

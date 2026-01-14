@@ -1,4 +1,4 @@
-# Goose Desktop App
+# reviewGOOSE:Desktop
 
 Native desktop notifications for macOS, Linux, Windows, BSD. Honks when you're blocking someone's PR, jet sounds when your PR advances.
 
@@ -24,13 +24,13 @@ Token not persisted to disk. Set environment variable each run.
 
 ### Organization Filtering
 
-Click Goose icon → **Organization Filter** → Check/uncheck orgs
+Click Desktop icon → **Organization Filter** → Check/uncheck orgs
 
 Useful to separate work and personal projects.
 
 ### Settings
 
-Click Goose icon → **Settings**:
+Click Desktop icon → **Settings**:
 
 - Enable/disable audio notifications
 - Auto-open PRs in browser (rate-limited: 1/min, 10/hr)

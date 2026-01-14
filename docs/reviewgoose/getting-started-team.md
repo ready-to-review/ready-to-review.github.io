@@ -5,7 +5,7 @@ This guide walks you through setting up reviewGOOSE for your team. You'll create
 **Time required:** ~15 minutes
 
 !!! important "GitHub App Required"
-    The reviewGOOSE Real-Time GitHub App is required for:
+    The reviewGOOSE:GitHub App is required for:
 
     - **Real-time notifications** (under 1 second)
     - **Slack integration** (server needs to know which repos to track)
@@ -178,4 +178,4 @@ Your team is now set up with reviewGOOSE. PRs will automatically appear in Slack
 
 ## Next Steps
 
-Explore [Dashboard](dashboard.md), [Slack](slack.md), [Goose](goose.md), or [GitHub Bot](github-bot.md) documentation. For issues, see [Troubleshooting](troubleshooting.md) or visit [support](https://github.com/codeGROOVE-dev/support).
+Explore [Dashboard](dashboard.md), [Slack](slack.md), [Desktop](goose.md), or [GitHub Bot](github-bot.md) documentation. For issues, see [Troubleshooting](troubleshooting.md) or visit [support](https://github.com/codeGROOVE-dev/support).
