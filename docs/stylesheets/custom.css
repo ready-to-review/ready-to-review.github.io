@@ -142,12 +142,36 @@
   background: white;
 }
 
+.md-sidebar--primary {
+  width: 13rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 14rem;
+  }
+}
+
+/* Product/section titles - never truncate */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > label {
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  padding-left: 0;
+}
+
 .md-nav__link {
   font-size: 0.875rem;
   color: var(--text-secondary);
   padding: 0.4rem 0.75rem;
   border-radius: 4px;
   transition: all 0.15s ease;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 .md-nav__link:hover {
