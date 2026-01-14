@@ -1,6 +1,8 @@
 # grooveASSIGN
 
-The right reviewer, every time.
+**The right reviewer, every time.**
+
+---
 
 ## The Problem
 
@@ -12,17 +14,19 @@ The right reviewer, every time.
 
 grooveASSIGN automatically assigns developers who actually know the code. Line-level blame analysis, not just file history.
 
-[Install Free](https://github.com/apps/grooveassign){ .md-button .md-button--primary }
+[Install Free →](https://github.com/apps/grooveassign){ .md-button .md-button--primary }
 
 Installs in 30 seconds. Works across your entire org.
 
+---
+
 ## How It Works
 
-1. PR is opened
-2. We run `git blame` on changed lines to find who wrote them
-3. Score candidates by code ownership, recent activity, and current workload
-4. Apply timing boost based on when reviewers are typically active
-5. Assign top reviewers (excludes bots, author, overloaded devs)
+1. **PR opened** — no reviewers assigned
+2. **Blame analysis** — we run `git blame` on changed lines
+3. **Candidate scoring** — code ownership, recent activity, current workload
+4. **Timing boost** — prefer reviewers likely to be online now
+5. **Assignment** — top reviewers assigned (excludes bots, author, overloaded devs)
 
 ### Timing Boost
 
@@ -37,6 +41,8 @@ grooveASSIGN analyzes historical activity patterns to prefer reviewers who are l
 
 This reduces review latency by assigning reviewers in their working hours, not while they're asleep.
 
+---
+
 ## Pricing
 
 | Plan | Price | Features |
@@ -44,9 +50,11 @@ This reduces review latency by assigning reviewers in their working hours, not w
 | **Free** | $0/forever | Public repos, all features |
 | **Team** | $1/user/month | Private repos |
 
-[Get Team](https://github.com/marketplace/grooveassign){ .md-button }
+[Get Team →](https://github.com/marketplace/grooveassign){ .md-button }
 
-## Docs
+---
+
+## Documentation
 
 - [Getting Started](getting-started.md)
 - [Configuration](configuration.md)

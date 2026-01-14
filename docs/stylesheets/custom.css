@@ -1,702 +1,461 @@
-/* Brutalist Technical Documentation - Matching Website Design */
+/* codeGROOVE Documentation - Clean, Professional Design */
 
 :root {
-  /* Override Material theme default colors - use black for better contrast */
-  --md-primary-fg-color: #000000;
-  --md-primary-fg-color--light: #1c1917;
-  --md-primary-fg-color--dark: #000000;
-  --md-primary-bg-color: #ffe838;
-  --md-accent-fg-color: #000000;
-  --md-accent-fg-color--transparent: rgba(0, 0, 0, 0.1);
-  --md-accent-bg-color: #ffe838;
-  --md-typeset-a-color: #000000;
+  /* Brand colors - used sparingly */
+  --brand-yellow: #ffe838;
+  --brand-yellow-subtle: #fef9c3;
 
-  /* codeGROOVE brand colors - matching website */
-  --yellow: #ffe838;
-  --yellow-dark: #eab308;
-  --cyan: #5ce1e6;
-  --cyan-dark: #0e7490;
-  --black: #000000;
-  --white: #ffffff;
+  /* Neutral palette - primary for content */
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
 
-  /* Brutalist color palette */
-  --gray-50: #fafaf9;
-  --gray-100: #f5f5f4;
-  --gray-700: #44403c;
-  --gray-800: #292524;
-  --gray-900: #1c1917;
-  --green: #10b981;
+  /* Functional colors */
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --text-muted: var(--gray-500);
+  --border-color: var(--gray-200);
+  --bg-subtle: var(--gray-50);
 
-  /* Action button green (as requested) */
-  --action-green: #00796b;
-  --action-green-hover: #00695c;
+  /* Links - professional blue */
+  --link-color: #2563eb;
+  --link-hover: #1d4ed8;
 
-  /* Legacy color mappings for compatibility */
-  --off-white: #fafaf9;
-  --light-gray: #f5f5f4;
-  --border-gray: #e0e0e0;
-  --text-primary: #000000;
-  --text-secondary: #666666;
-  --code-bg: #f8f9fa;
-
-  /* Brutalist Shadows - matching website */
-  --shadow-brutal: 4px 4px 0px 0px rgba(0, 0, 0, 1);
-  --shadow-brutal-lg: 6px 6px 0px 0px rgba(0, 0, 0, 1);
-  --shadow-brutal-hover: 6px 6px 0px 0px var(--yellow);
-  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-  /* Border radius - slightly smaller for docs */
-  --radius: 8px;
-  --radius-lg: 12px;
+  /* Override Material theme */
+  --md-primary-fg-color: var(--gray-900);
+  --md-primary-bg-color: var(--brand-yellow);
+  --md-accent-fg-color: var(--link-color);
+  --md-typeset-a-color: var(--link-color);
 }
 
-/* Make sidebar wider and always visible on desktop */
-@media screen and (min-width: 76.25em) {
-  .md-sidebar--primary {
-    width: 16rem;
-  }
-
-  .md-sidebar--secondary {
-    width: 14rem;
-  }
-}
-
-/* Always show navigation on desktop - no hamburger menu */
-@media screen and (min-width: 60em) {
-  .md-nav--primary .md-nav__title {
-    display: none;
-  }
-
-  .md-nav--primary .md-nav__list {
-    display: block !important;
-  }
-}
-
-/* Main content area - ensure white background */
-.md-main {
-  background-color: var(--white);
-}
-
-.md-content {
-  background-color: var(--white);
-}
-
-.md-content__inner {
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-}
-
-/* Typography improvements */
+/* Clean body typography */
 .md-typeset {
+  font-size: 0.9rem;
+  line-height: 1.7;
   color: var(--text-primary);
-  font-size: 0.855rem;
-  line-height: 1.6;
 }
 
+/* Headings - clean hierarchy */
 .md-typeset h1 {
-  color: var(--text-primary);
   font-weight: 600;
+  font-size: 2rem;
   letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--border-gray);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .md-typeset h2 {
-  color: var(--text-primary);
   font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--border-gray);
-  padding-bottom: 0.4rem;
+  border-bottom: none;
 }
 
 .md-typeset h3 {
-  color: var(--black);
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--text-primary);
   margin-top: 2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.75rem;
 }
 
-/* Navigation improvements */
-.md-nav {
-  font-size: 0.855rem;
-}
-
-.md-nav__link {
+.md-typeset h4 {
+  font-weight: 600;
+  font-size: 1rem;
   color: var(--text-secondary);
-  transition: all 0.2s ease;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  margin: 0.1rem 0;
-}
-
-.md-nav__link:hover {
-  color: var(--black);
-  background-color: rgba(255, 232, 56, 0.2);
-}
-
-.md-nav__link--active {
-  color: var(--black);
-  font-weight: 700;
-  background-color: var(--yellow);
-  border-left: 4px solid var(--black);
-}
-
-/* Sidebar navigation */
-.md-sidebar--primary {
-  background-color: var(--white);
-  border-right: 1px solid var(--border-gray);
-}
-
-.md-nav--primary .md-nav__title {
-  background-color: transparent;
-  color: var(--text-primary);
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 1.5rem 0.75rem 1rem;
-  border-bottom: 2px solid var(--border-gray);
-}
-
-.md-nav--primary .md-nav__title .md-nav__button {
-  display: none;
-}
-
-/* Table of contents */
-.md-sidebar--secondary {
-  background-color: var(--white);
-}
-
-.md-nav--secondary .md-nav__link--active {
-  color: var(--black);
-  font-weight: 700;
-  border-left: 3px solid var(--black);
-  background-color: rgba(255, 232, 56, 0.3);
-}
-
-/* Button styling - Brutalist design with Apple HIG compliance (min 44px touch target) */
-.md-button,
-.md-button.md-button--primary,
-a.md-button,
-a.md-button.md-button--primary {
-  background-color: var(--yellow) !important;
-  color: var(--black) !important;
-  border: 3px solid var(--black) !important;
-  border-radius: var(--radius);
-  padding: 0.75rem 1.75rem;
-  min-height: 44px;
-  font-weight: 700;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-brutal);
-}
-
-.md-button:hover,
-.md-button.md-button--primary:hover,
-a.md-button:hover,
-a.md-button.md-button--primary:hover {
-  background-color: var(--white) !important;
-  color: var(--black) !important;
-  box-shadow: var(--shadow-brutal-hover);
-  transform: translate(-2px, -2px);
-}
-
-/* Action buttons - with brutalist style */
-.md-button--primary {
-  background-color: var(--yellow) !important;
-  color: var(--black) !important;
-  border: 3px solid var(--black);
-  box-shadow: var(--shadow-brutal);
-}
-
-.md-button--primary:hover {
-  background-color: var(--white) !important;
-  color: var(--black) !important;
-  box-shadow: var(--shadow-brutal-hover);
-  transform: translate(-2px, -2px);
-}
-
-/* Link styling - obvious and professional */
-.md-typeset a {
-  color: var(--black);
-  text-decoration: none;
-  border-bottom: 2px solid var(--yellow);
-  transition: all 0.2s ease;
-  font-weight: 600;
-}
-
-.md-typeset a:hover {
-  color: var(--black);
-  background-color: var(--yellow);
-  border-bottom-color: var(--black);
-}
-
-/* Apple HIG: Focus indicators - accessible and visible, brutalist style */
-a:focus-visible,
-button:focus-visible,
-.md-button:focus-visible {
-  outline: 3px solid var(--black);
-  outline-offset: 2px;
-  border-radius: 4px;
-  box-shadow: 0 0 0 6px var(--yellow);
-}
-
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--black);
-  outline-offset: 0;
-  box-shadow: 0 0 0 4px var(--yellow);
-}
-
-/* Ensure minimum touch target size (Apple HIG: 44x44px) */
-button,
-[role="button"],
-.md-nav__link,
-.md-tabs__link {
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-}
-
-/* Code blocks - brutalist style */
-.md-typeset code {
-  background-color: var(--yellow);
-  color: var(--black);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.85em;
-  border: 2px solid var(--black);
-  font-weight: 600;
-}
-
-.md-typeset pre {
-  background-color: var(--gray-50);
-  border: 3px solid var(--black);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-brutal);
-}
-
-.md-typeset pre code {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  color: var(--black);
-  font-weight: 400;
-}
-
-/* Admonitions - brutalist styling */
-.md-typeset .admonition {
-  border: 3px solid var(--black);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-brutal);
-  background-color: var(--white);
-}
-
-.md-typeset .admonition-title {
-  background-color: var(--yellow);
-  color: var(--black);
-  font-weight: 700;
-  border-bottom: 3px solid var(--black);
-}
-
-.md-typeset .note {
-  background-color: var(--gray-50);
-}
-
-.md-typeset .note .admonition-title {
-  background-color: var(--white);
-  border: 2px solid var(--black);
-}
-
-.md-typeset .warning {
-  background-color: rgba(255, 232, 56, 0.1);
-}
-
-.md-typeset .warning .admonition-title {
-  background-color: var(--yellow);
-}
-
-.md-typeset .danger {
-  background-color: rgba(211, 47, 47, 0.05);
-}
-
-.md-typeset .danger .admonition-title {
-  background-color: #ff6b6b;
-}
-
-.md-typeset .tip {
-  background-color: rgba(16, 185, 129, 0.05);
-}
-
-.md-typeset .tip .admonition-title {
-  background-color: var(--green);
-}
-
-/* Tables - brutalist styling */
-.md-typeset table:not([class]) {
-  border: 3px solid var(--black);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-brutal);
-}
-
-.md-typeset table:not([class]) th {
-  background-color: var(--yellow);
-  color: var(--black);
-  font-weight: 700;
-  padding: 0.9rem 1rem;
-  border-bottom: 3px solid var(--black);
-}
-
-.md-typeset table:not([class]) td {
-  border-bottom: 2px solid var(--gray-100);
-  padding: 0.8rem 1rem;
-}
-
-.md-typeset table:not([class]) tr:hover {
-  background-color: rgba(255, 232, 56, 0.1);
-}
-
-/* Header improvements - brutalist style */
-.md-header {
-  background-color: var(--yellow);
-  color: var(--black);
-  box-shadow: none;
-  border-bottom: 4px solid var(--black);
-}
-
-.md-header__button {
-  color: var(--black);
-}
-
-.md-header__button:hover {
-  color: var(--gray-700);
-}
-
-.md-header__title {
-  color: var(--black);
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.01em;
-}
-
-/* Logo styling */
-.md-header__button.md-logo img,
-.md-header__button.md-logo svg {
-  filter: none;
-}
-
-/* External link styling for Support */
-.md-tabs__link[href^="http"]::after,
-.md-nav__link[href^="http"]::after {
-  content: " ↗";
-  font-size: 0.85em;
-  opacity: 0.6;
-}
-
-/* Search box - brutalist style */
-.md-search__input {
-  background-color: var(--white);
-  border: 2px solid var(--black);
-  border-radius: var(--radius);
-  color: var(--black);
-  transition: all 0.2s ease;
-}
-
-.md-search__input:focus {
-  border-color: var(--black);
-  background-color: var(--white);
-  box-shadow: var(--shadow-brutal);
-}
-
-.md-search__input::placeholder {
-  color: var(--gray-700);
-}
-
-.md-search__icon {
-  color: var(--black);
-}
-
-/* Breadcrumbs/navigation path */
-.md-path {
-  color: var(--text-secondary);
-}
-
-.md-path__link {
-  color: var(--black);
-  font-weight: 600;
-}
-
-/* Footer */
-.md-footer {
-  background-color: var(--text-primary);
-  margin-top: 4rem;
-}
-
-.md-footer-meta {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.md-footer__inner {
-  padding: 0.5rem;
-}
-
-.md-footer-copyright {
-  font-size: 0.7875rem;
-}
-
-/* Improved hierarchy visibility */
-.md-nav__item--nested > .md-nav__link {
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.md-nav__item--section > .md-nav__link {
-  font-weight: 600;
-}
-
-/* Indent nested navigation items under sections */
-.md-nav__item--nested .md-nav__item {
-  padding-left: 0.75rem;
-}
-
-.md-nav__item--section .md-nav__item {
-  padding-left: 0.75rem;
-}
-
-/* Clean list styling */
-.md-typeset ul,
-.md-typeset ol {
-  margin-left: 0;
-  padding-left: 1.5rem;
-}
-
-.md-typeset li {
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-/* Cards and content blocks - brutalist style */
-.md-typeset blockquote {
-  border: 3px solid var(--black);
-  border-left: 6px solid var(--yellow);
-  background-color: rgba(255, 232, 56, 0.05);
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-brutal);
-}
-
-/* Horizontal rules - brutalist style */
-.md-typeset hr {
-  border: none;
-  border-bottom: 3px solid var(--black);
-  margin: 2rem 0;
-}
-
-/* Back to top button - brutalist style */
-.md-top {
-  background-color: var(--yellow);
-  color: var(--black);
-  border: 3px solid var(--black);
-  box-shadow: var(--shadow-brutal);
-}
-
-.md-top:hover {
-  background-color: var(--white);
-  color: var(--black);
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-brutal-hover);
-}
-
-/* Ensure content is readable with proper spacing */
-.md-typeset > :first-child {
-  margin-top: 0;
-}
-
+/* Paragraphs */
 .md-typeset p {
   margin-bottom: 1rem;
 }
 
-/* Code copy button */
+/* Links - clean and professional */
+.md-typeset a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: none;
+  font-weight: 500;
+}
+
+.md-typeset a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Header - subtle brand presence */
+.md-header {
+  background: var(--brand-yellow);
+  box-shadow: none;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.md-header__title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--gray-900);
+}
+
+.md-header__button {
+  color: var(--gray-900);
+}
+
+/* Tabs - clean, minimal */
+.md-tabs {
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.md-tabs__link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  opacity: 1;
+}
+
+.md-tabs__link:hover {
+  color: var(--text-primary) !important;
+}
+
+.md-tabs__link--active {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  border-bottom: 2px solid var(--gray-900);
+}
+
+/* Sidebar - clean navigation */
+.md-sidebar {
+  background: white;
+}
+
+.md-nav__link {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.md-nav__link:hover {
+  color: var(--text-primary);
+  background: var(--gray-100);
+}
+
+.md-nav__link--active {
+  color: var(--text-primary);
+  font-weight: 600;
+  background: var(--gray-100);
+}
+
+/* Content area */
+.md-content {
+  background: white;
+}
+
+.md-content__inner {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  max-width: 48rem;
+}
+
+/* Inline code - subtle */
+.md-typeset code {
+  background: var(--gray-100);
+  color: var(--gray-800);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  border: none;
+  font-weight: 500;
+}
+
+/* Code blocks - clean */
+.md-typeset pre {
+  background: var(--gray-50);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.md-typeset pre code {
+  background: transparent;
+  padding: 0;
+  font-weight: 400;
+}
+
+/* Tables - minimal and readable */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: none;
+  font-size: 0.875rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--gray-50);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background: var(--gray-50);
+}
+
+/* Buttons - professional, not loud */
+.md-typeset .md-button,
+.md-typeset a.md-button {
+  background: var(--gray-900);
+  color: white !important;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  box-shadow: none;
+  transition: background 0.15s ease;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset a.md-button:hover {
+  background: var(--gray-700);
+  color: white !important;
+  transform: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.md-typeset .md-button--primary,
+.md-typeset a.md-button--primary {
+  background: var(--gray-900);
+  color: white !important;
+}
+
+/* Lists - clean spacing */
+.md-typeset ul,
+.md-typeset ol {
+  margin-left: 0;
+  padding-left: 1.25rem;
+}
+
+.md-typeset li {
+  margin-bottom: 0.4rem;
+}
+
+.md-typeset li::marker {
+  color: var(--gray-400);
+}
+
+/* Blockquotes - subtle */
+.md-typeset blockquote {
+  border-left: 3px solid var(--gray-300);
+  background: transparent;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Horizontal rules - subtle dividers */
+.md-typeset hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+/* Admonitions - clean */
+.md-typeset .admonition {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: none;
+  background: white;
+  font-size: 0.875rem;
+}
+
+.md-typeset .admonition-title {
+  background: var(--gray-50);
+  color: var(--text-primary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.6rem 1rem;
+}
+
+.md-typeset .admonition > p {
+  padding: 0.75rem 1rem;
+}
+
+/* Search - clean */
+.md-search__input {
+  background: var(--gray-100);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+.md-search__input:focus {
+  background: white;
+  border-color: var(--gray-300);
+  box-shadow: none;
+}
+
+/* Footer - minimal */
+.md-footer {
+  background: var(--gray-900);
+  margin-top: 4rem;
+}
+
+.md-footer-meta {
+  background: transparent;
+}
+
+/* Code tabs - clean */
+.md-typeset .tabbed-set > label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+}
+
+.md-typeset .tabbed-set > input:checked + label {
+  color: var(--text-primary);
+  border-color: var(--gray-900);
+  background: transparent;
+}
+
+/* Copy button - subtle */
 .md-clipboard {
-  color: var(--black);
-  opacity: 0.6;
+  color: var(--gray-400);
 }
 
 .md-clipboard:hover {
-  color: var(--black);
-  opacity: 1;
-  background-color: var(--yellow);
+  color: var(--gray-600);
+  background: transparent;
 }
 
-/* Ensure consistent spacing */
-.md-typeset > * {
-  margin-top: 0;
+/* Back to top - minimal */
+.md-top {
+  background: var(--gray-900);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
 }
 
-.md-typeset > * + * {
-  margin-top: 1rem;
+.md-top:hover {
+  background: var(--gray-700);
+  transform: none;
 }
 
-/* Professional section dividers */
-.md-typeset h2 + p,
-.md-typeset h3 + p {
-  margin-top: 0.5rem;
+/* Product grid - clean cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
-/* Apple HIG: Typography - ensure readability */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.product-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: white;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* Apple HIG: Responsive text sizing */
+.product-card:hover {
+  border-color: var(--gray-300);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.product-card h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  border-bottom: none !important;
+}
+
+.product-card p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.product-card p strong {
+  color: var(--text-primary);
+}
+
+/* External links indicator */
+.md-tabs__link[href^="http"]::after,
+.md-nav__link[href^="http"]::after {
+  content: " ↗";
+  font-size: 0.75em;
+  opacity: 0.5;
+}
+
+/* Focus states - accessible */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .md-typeset {
     font-size: 1rem;
   }
 
-  .md-button {
-    padding: 0.85rem 1.5rem;
-    font-size: 1rem;
+  .md-content__inner {
+    padding-top: 1rem;
   }
 }
 
-/* Apple HIG: Color contrast - ensure WCAG AA compliance */
-.md-typeset code {
-  color: #000000;
-}
-
-/* Improve form input styling */
-input[type="text"],
-input[type="search"],
-textarea {
-  font-size: 16px; /* Prevents zoom on iOS */
-  padding: 12px;
-  border-radius: 6px;
-  border: 2px solid var(--border-gray);
-  transition: border-color 0.2s ease;
-}
-
-input[type="text"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-  border-color: var(--black);
-  outline: 3px solid var(--black);
-  outline-offset: 0;
-  box-shadow: 0 0 0 4px var(--yellow);
-}
-
-/* Tab styling for code blocks - brutalist style */
-.md-typeset .tabbed-set > input:checked + label {
-  border-color: var(--black);
-  color: var(--black);
-  background-color: var(--yellow);
-  font-weight: 700;
-}
-
-.md-typeset .tabbed-set > label:hover {
-  color: var(--black);
-  background-color: rgba(255, 232, 56, 0.2);
-}
-
-/* Choice cards for getting-started page - brutalist style */
-.choice-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin: 32px 0;
-  max-width: 800px;
-}
-
-.choice-card {
-  border: 3px solid var(--black);
-  border-radius: var(--radius-lg);
-  padding: 32px 24px 24px;
-  background: var(--white);
-  box-shadow: var(--shadow-brutal-lg);
-  transition: all 0.2s ease;
-}
-
-.choice-card:hover {
-  background: rgba(255, 232, 56, 0.1);
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px 0px var(--yellow);
-}
-
-.choice-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  padding-top: 0;
-  color: var(--black);
-  font-weight: 700;
-}
-
-.choice-card p:first-of-type {
-  font-weight: 600;
-  color: var(--gray-700);
-  margin-top: 0.5rem;
-}
-
-.choice-card-cta {
-  display: inline-block;
-  background: var(--yellow);
-  color: var(--black) !important;
-  padding: 12px 24px;
-  border: 3px solid var(--black);
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 24px;
-  min-height: 44px;
-  line-height: 20px;
-  transition: all 0.2s ease;
-  border-bottom: 3px solid var(--black) !important;
-  box-shadow: var(--shadow-brutal);
-}
-
-.choice-card-cta:hover {
-  background: var(--white);
-  color: var(--black) !important;
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-brutal-hover);
-  border-bottom: 3px solid var(--black) !important;
-}
-
-/* Responsive: ensure cards don't get too wide */
-@media (min-width: 1200px) {
-  .choice-cards {
-    max-width: 900px;
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
   }
 }
 
-/* Additional accessibility fixes - ensure proper contrast everywhere */
-.md-typeset .md-button,
-.md-typeset a.md-button {
-  color: var(--black) !important;
-}
+/* Print styles */
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer {
+    display: none;
+  }
 
-/* Fix any Material theme elements with poor contrast */
-[data-md-color-primary="yellow"] {
-  --md-primary-fg-color: #000000;
-  --md-primary-bg-color: #ffe838;
-}
-
-[data-md-color-accent="yellow"] {
-  --md-accent-fg-color: #000000;
-  --md-accent-bg-color: #ffe838;
-}
-
-/* Ensure all interactive elements have proper contrast */
-.md-tabs__link,
-.md-nav__link {
-  color: var(--text-secondary) !important;
-}
-
-.md-tabs__link--active,
-.md-nav__link--active {
-  color: var(--black) !important;
+  .md-content {
+    margin: 0;
+    padding: 0;
+  }
 }

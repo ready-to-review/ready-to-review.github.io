@@ -7,19 +7,18 @@ theme:
   name: material
   palette:
     scheme: default
-    primary: deep purple
-    accent: purple
+    primary: custom
+    accent: custom
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.instant
     - navigation.tracking
     - navigation.top
-    - navigation.path
     - navigation.indexes
     - toc.follow
     - search.suggest
     - search.highlight
-    - search.share
     - content.code.copy
     - content.tabs.link
     - content.code.annotate
