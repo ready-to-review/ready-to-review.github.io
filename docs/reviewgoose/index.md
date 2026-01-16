@@ -32,6 +32,7 @@ reviewGOOSE tracks whose turn it is and notifies the right person at the right t
 | [GitHub](github-bot.md) | Connects to your repos |
 | [Web](dashboard.md) | Dashboard at `<org>.reviewgoose.dev` |
 | [Slack](slack.md) | Channel posts and DMs |
+| [Discord](discord.md) | Channel posts and DMs (Preview) |
 | [Desktop](goose.md) | Native notifications |
 
 ---

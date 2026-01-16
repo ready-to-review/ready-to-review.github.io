@@ -2,6 +2,8 @@
 
 **The right reviewer, every time.**
 
+**Open Beta** — Currently free for everyone. Always free for open source.
+
 ---
 
 ## The Problem

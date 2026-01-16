@@ -13,6 +13,11 @@
 - Channel membership (to detect if you saw notifications)
 - Email addresses (to match GitHub ↔ Slack accounts)
 
+**Discord:**
+- Guild (server) membership
+- User IDs (for explicit user mapping in config)
+- No DM content or message history
+
 **Desktop app:** Uses your GitHub CLI credentials locally. No data sent to us.
 
 ## Data Storage

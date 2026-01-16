@@ -17,8 +17,10 @@ For teams deploying reviewGOOSE across an organization.
 
 1. [Install the GitHub App](github-bot.md)
 2. [View the Dashboard](dashboard.md)
-3. [Set up Slack](slack.md)
+3. [Set up Slack](slack.md) or [Discord](discord.md)
 4. Optionally [install Desktop](goose.md) for individual notifications
+
+You can use Desktop, Slack, and Discord together for complete coverage.
 
 ## Evaluation Tips
 

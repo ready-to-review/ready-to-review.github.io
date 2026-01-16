@@ -36,6 +36,7 @@ nav:
     - GitHub: reviewgoose/github-bot.md
     - Web: reviewgoose/dashboard.md
     - Slack: reviewgoose/slack.md
+    - Discord: reviewgoose/discord.md
     - Desktop: reviewgoose/goose.md
     - Plans: reviewgoose/plans.md
     - Security: reviewgoose/security.md

@@ -12,11 +12,11 @@ All plans include all features. The only difference is repository access.
 
 ## Which Plan?
 
-**Free**: Open source contributors. Works with any public repository.
+**Free**: Open source contributors. Works with any public repository. Includes Desktop, Slack, and Discord.
 
-**Pro**: Private repos for individuals. Covers work, side projects, client work.
+**Pro**: Private repos for individuals. Covers work, side projects, client work. All platforms included.
 
-**Flock**: Teams. Billed through GitHub Marketplace, add/remove seats anytime.
+**Flock**: Teams. Billed through GitHub Marketplace, add/remove seats anytime. All platforms included.
 
 ## Private Repos
 
