@@ -18,11 +18,50 @@ gitIDENTITY detects location mismatches through behavioral analysis of GitHub ac
 
 ## How It Works
 
+```mermaid
+graph LR
+    A[GitHub Username] --> B[Fetch Activity Data]
+    B --> C[Extract Timestamps]
+    C --> D[Analyze Patterns]
+    D --> E{Detect Timezone}
+    E --> F[Map to Location]
+    F --> G[Screen Watchlists]
+    G --> H[Return Results]
+```
+
 1. **Activity analysis** — Analyze years of GitHub commits, PRs, and comments
 2. **Pattern detection** — Identify sleep/work/lunch patterns in local time
 3. **Timezone inference** — Determine most likely timezone with confidence score
 4. **Geolocation** — Map timezone to country and region
 5. **Watchlist screening** — Check against OFAC, BIS, UN/EU sanctions lists
+
+## Detection Algorithm
+
+```mermaid
+graph TD
+    Start[Commit Timestamps] --> UTC[Convert to UTC]
+    UTC --> TZ[Try Each Timezone]
+    TZ --> Patterns{Analyze Patterns}
+    Patterns --> Sleep[Sleep: 11pm-6am?]
+    Patterns --> Work[Work: 9am-5pm?]
+    Patterns --> Lunch[Lunch: 11am-2:30pm?]
+    Patterns --> Evening[Evening: 7pm-11pm?]
+    Sleep --> Score[Calculate Score]
+    Work --> Score
+    Lunch --> Score
+    Evening --> Score
+    Score --> Best{Best Match?}
+    Best -->|Yes| Confidence[Calculate Confidence]
+    Best -->|No| TZ
+    Confidence --> Result[Return Timezone]
+```
+
+**Confidence factors**:
+
+- Pattern consistency across months
+- Total commits analyzed
+- Presence of strong signals (lunch, evening coding)
+- Absence of conflicting signals (VPN indicators)
 
 ---
 

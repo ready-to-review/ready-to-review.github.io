@@ -24,11 +24,48 @@ Installs in 30 seconds. Works across your entire org.
 
 ## How It Works
 
+```mermaid
+graph LR
+    A[New PR] --> B[Get Changed Files]
+    B --> C[Run git blame]
+    C --> D[Count Lines per Author]
+    D --> E[Apply Filters]
+    E --> F[Score Candidates]
+    F --> G[Assign Top N]
+    G --> H[GitHub Reviewers]
+```
+
 1. **PR opened** — no reviewers assigned
 2. **Blame analysis** — we run `git blame` on changed lines
 3. **Candidate scoring** — code ownership, recent activity, current workload
 4. **Timing boost** — prefer reviewers likely to be online now
 5. **Assignment** — top reviewers assigned (excludes bots, author, overloaded devs)
+
+## Blame Analysis in Detail
+
+```mermaid
+graph TD
+    Start[Changed Lines] --> Parse[Parse Diff]
+    Parse --> Files[For Each File]
+    Files --> Blame[git blame -L start,end]
+    Blame --> Author[Extract Author]
+    Author --> Weight[Apply Recency Weight]
+    Weight --> Aggregate[Aggregate Scores]
+    Aggregate --> Rank[Rank by Total Lines]
+    Rank --> Filter{Pass Filters?}
+    Filter -->|Yes| Candidate[Add to Candidates]
+    Filter -->|No| Skip[Skip]
+    Candidate --> Done{More Files?}
+    Skip --> Done
+    Done -->|Yes| Files
+    Done -->|No| Assign[Assign Top N]
+```
+
+**Recency weighting**:
+
+- Last 30 days: 100% weight
+- 30-90 days: 50% weight
+- 90+ days: 25% weight
 
 ### Timing Boost
 

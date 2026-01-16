@@ -2,28 +2,49 @@ site_name: codeGROOVE
 site_url: https://docs.codegroove.dev
 site_description: Developer tools that make collaboration effortless
 site_author: codeGROOVE
+repo_url: https://github.com/ready-to-review/ready-to-review.github.io
+repo_name: " "
+edit_uri: edit/main/docs/
 
 theme:
   name: material
   palette:
-    scheme: default
-    primary: custom
-    accent: custom
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.instant
+    - navigation.instant.prefetch
     - navigation.tracking
     - navigation.top
     - navigation.indexes
+    - navigation.path
+    - navigation.footer
     - toc.follow
+    - toc.integrate
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
-    - content.tabs.link
     - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+    - content.action.view
   icon:
     repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
   font:
     text: Inter
     code: JetBrains Mono
@@ -33,41 +54,59 @@ nav:
   - reviewGOOSE:
     - reviewgoose/index.md
     - Getting Started: reviewgoose/getting-started.md
-    - GitHub: reviewgoose/github-bot.md
-    - Web: reviewgoose/dashboard.md
-    - Slack: reviewgoose/slack.md
-    - Discord: reviewgoose/discord.md
-    - Desktop: reviewgoose/goose.md
+    - Components:
+      - GitHub: reviewgoose/github-bot.md
+      - Web: reviewgoose/dashboard.md
+      - Slack: reviewgoose/slack.md
+      - Discord: reviewgoose/discord.md
+      - Desktop: reviewgoose/goose.md
+    - Troubleshooting: reviewgoose/troubleshooting.md
     - Plans: reviewgoose/plans.md
     - Security: reviewgoose/security.md
   - grooveASSIGN:
     - grooveassign/index.md
     - Getting Started: grooveassign/getting-started.md
     - Configuration: grooveassign/configuration.md
+    - Troubleshooting: grooveassign/troubleshooting.md
   - gitIDENTITY:
     - gitidentity/index.md
     - Getting Started: gitidentity/getting-started.md
-    - API: gitidentity/api.md
+    - API Reference: gitidentity/api.md
+    - Troubleshooting: gitidentity/troubleshooting.md
   - Support: https://codegroove.dev/support
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.keys
   - tables
   - attr_list
   - md_in_html
+  - def_list
+  - abbr
   - toc:
       permalink: true
+      toc_depth: 3
 
 plugins:
-  - search
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
 
 extra_css:
   - stylesheets/custom.css
