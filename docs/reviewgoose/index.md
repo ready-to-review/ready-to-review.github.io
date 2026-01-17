@@ -72,7 +72,8 @@ graph TD
 | [Web](dashboard.md) | Dashboard at `<org>.reviewgoose.dev` |
 | [Slack](slack.md) | Channel posts and DMs |
 | [Discord](discord.md) | Channel posts and DMs (Preview) |
-| [Desktop](goose.md) | Native notifications |
+| [Desktop](goose.md) | Native notifications with sounds |
+| [CLI](cli.md) | Terminal view for developers who live in the shell |
 
 ---
 
